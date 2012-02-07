@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EBFD90014E192450042AC70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FF14E192450042AC70 /* Foundation.framework */; };
+		5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD90514E192450042AC70 /* FakeWeb.m */; };
+		5EBFD90E14E192450042AC70 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD90D14E192450042AC70 /* SenTestingKit.framework */; };
+		5EBFD91114E192450042AC70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FF14E192450042AC70 /* Foundation.framework */; };
+		5EBFD91414E192450042AC70 /* libFakeWeb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FC14E192450042AC70 /* libFakeWeb.a */; };
+		5EBFD92914E195140042AC70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92814E195140042AC70 /* UIKit.framework */; };
+		5EBFD92B14E1951D0042AC70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92A14E1951D0042AC70 /* CoreGraphics.framework */; };
+		5EBFD92D14E195260042AC70 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92C14E195260042AC70 /* CFNetwork.framework */; };
+		5EBFD92F14E1952E0042AC70 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92E14E1952E0042AC70 /* libz.dylib */; };
+		5EBFD93114E195380042AC70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD93014E195380042AC70 /* SystemConfiguration.framework */; };
+		5EBFD94714E1957A0042AC70 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */; };
+		5EBFD94814E1957A0042AC70 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */; };
+		5EBFD94914E1957A0042AC70 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93914E1957A0042AC70 /* ASIDataDecompressor.m */; };
+		5EBFD94A14E1957A0042AC70 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93B14E1957A0042AC70 /* ASIDownloadCache.m */; };
+		5EBFD94B14E1957A0042AC70 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93D14E1957A0042AC70 /* ASIFormDataRequest.m */; };
+		5EBFD94C14E1957A0042AC70 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */; };
+		5EBFD94D14E1957A0042AC70 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD94314E1957A0042AC70 /* ASIInputStream.m */; };
+		5EBFD94E14E1957A0042AC70 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */; };
+		5EBFD96414E196020042AC70 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD95D14E195EF0042AC70 /* libKiwi.a */; };
+		5EBFD96614E196850042AC70 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD96514E196850042AC70 /* MobileCoreServices.framework */; };
+		5EBFD96B14E196F10042AC70 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD96A14E196F10042AC70 /* Reachability.m */; };
+		5EBFD96D14E197750042AC70 /* FakeWebTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD96C14E197750042AC70 /* FakeWebTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EBFD91214E192450042AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EBFD8F314E192450042AC70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EBFD8FB14E192450042AC70;
+			remoteInfo = FakeWeb;
+		};
+		5EBFD95C14E195EF0042AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015B9F11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
+		5EBFD95E14E195EF0042AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015C9E11584017002E9A98;
+			remoteInfo = KiwiTests;
+		};
+		5EBFD96014E195EF0042AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A3B16542139967B800E9CC6E;
+			remoteInfo = KiwiExamples;
+		};
+		5EBFD96214E195F90042AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F5015B9E11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5EBFD8FC14E192450042AC70 /* libFakeWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFakeWeb.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EBFD8FF14E192450042AC70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5EBFD90314E192450042AC70 /* FakeWeb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakeWeb-Prefix.pch"; sourceTree = "<group>"; };
+		5EBFD90414E192450042AC70 /* FakeWeb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeWeb.h; sourceTree = "<group>"; };
+		5EBFD90514E192450042AC70 /* FakeWeb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeWeb.m; sourceTree = "<group>"; };
+		5EBFD90C14E192450042AC70 /* FakeWebTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeWebTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EBFD90D14E192450042AC70 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5EBFD91714E192450042AC70 /* FakeWebTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FakeWebTests-Info.plist"; sourceTree = "<group>"; };
+		5EBFD92814E195140042AC70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5EBFD92A14E1951D0042AC70 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5EBFD92C14E195260042AC70 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5EBFD92E14E1952E0042AC70 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5EBFD93014E195380042AC70 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5EBFD93314E1957A0042AC70 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = "externals/asi-http-request/Classes/ASIAuthenticationDialog.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = "externals/asi-http-request/Classes/ASIAuthenticationDialog.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD93514E1957A0042AC70 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "externals/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93614E1957A0042AC70 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = "externals/asi-http-request/Classes/ASIDataCompressor.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = "externals/asi-http-request/Classes/ASIDataCompressor.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD93814E1957A0042AC70 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataDecompressor.h; path = "externals/asi-http-request/Classes/ASIDataDecompressor.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93914E1957A0042AC70 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataDecompressor.m; path = "externals/asi-http-request/Classes/ASIDataDecompressor.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD93A14E1957A0042AC70 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDownloadCache.h; path = "externals/asi-http-request/Classes/ASIDownloadCache.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93B14E1957A0042AC70 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDownloadCache.m; path = "externals/asi-http-request/Classes/ASIDownloadCache.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD93C14E1957A0042AC70 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIFormDataRequest.h; path = "externals/asi-http-request/Classes/ASIFormDataRequest.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93D14E1957A0042AC70 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIFormDataRequest.m; path = "externals/asi-http-request/Classes/ASIFormDataRequest.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD93E14E1957A0042AC70 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequest.h; path = "externals/asi-http-request/Classes/ASIHTTPRequest.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = "externals/asi-http-request/Classes/ASIHTTPRequest.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD94014E1957A0042AC70 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestConfig.h; path = "externals/asi-http-request/Classes/ASIHTTPRequestConfig.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD94114E1957A0042AC70 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestDelegate.h; path = "externals/asi-http-request/Classes/ASIHTTPRequestDelegate.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD94214E1957A0042AC70 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIInputStream.h; path = "externals/asi-http-request/Classes/ASIInputStream.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD94314E1957A0042AC70 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = "externals/asi-http-request/Classes/ASIInputStream.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD94414E1957A0042AC70 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "externals/asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "externals/asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
+		5EBFD94614E1957A0042AC70 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "externals/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
+		5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = externals/Kiwi/Kiwi.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5EBFD96514E196850042AC70 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5EBFD96914E196F10042AC70 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5EBFD96A14E196F10042AC70 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		5EBFD96C14E197750042AC70 /* FakeWebTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebTests.m; path = Spec/FakeWebTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EBFD8F914E192450042AC70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EBFD90014E192450042AC70 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EBFD90814E192450042AC70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EBFD92F14E1952E0042AC70 /* libz.dylib in Frameworks */,
+				5EBFD96614E196850042AC70 /* MobileCoreServices.framework in Frameworks */,
+				5EBFD93114E195380042AC70 /* SystemConfiguration.framework in Frameworks */,
+				5EBFD92D14E195260042AC70 /* CFNetwork.framework in Frameworks */,
+				5EBFD92B14E1951D0042AC70 /* CoreGraphics.framework in Frameworks */,
+				5EBFD92914E195140042AC70 /* UIKit.framework in Frameworks */,
+				5EBFD90E14E192450042AC70 /* SenTestingKit.framework in Frameworks */,
+				5EBFD91114E192450042AC70 /* Foundation.framework in Frameworks */,
+				5EBFD96414E196020042AC70 /* libKiwi.a in Frameworks */,
+				5EBFD91414E192450042AC70 /* libFakeWeb.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EBFD8F114E192450042AC70 = {
+			isa = PBXGroup;
+			children = (
+				5EBFD90114E192450042AC70 /* FakeWeb */,
+				5EBFD91514E192450042AC70 /* FakeWebTests */,
+				5EBFD8FE14E192450042AC70 /* Frameworks */,
+				5EBFD8FD14E192450042AC70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EBFD8FD14E192450042AC70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD8FC14E192450042AC70 /* libFakeWeb.a */,
+				5EBFD90C14E192450042AC70 /* FakeWebTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EBFD8FE14E192450042AC70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD92E14E1952E0042AC70 /* libz.dylib */,
+				5EBFD96514E196850042AC70 /* MobileCoreServices.framework */,
+				5EBFD93014E195380042AC70 /* SystemConfiguration.framework */,
+				5EBFD92C14E195260042AC70 /* CFNetwork.framework */,
+				5EBFD92A14E1951D0042AC70 /* CoreGraphics.framework */,
+				5EBFD92814E195140042AC70 /* UIKit.framework */,
+				5EBFD8FF14E192450042AC70 /* Foundation.framework */,
+				5EBFD90D14E192450042AC70 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EBFD90114E192450042AC70 /* FakeWeb */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD90414E192450042AC70 /* FakeWeb.h */,
+				5EBFD90514E192450042AC70 /* FakeWeb.m */,
+				5EBFD90214E192450042AC70 /* Supporting Files */,
+			);
+			path = FakeWeb;
+			sourceTree = "<group>";
+		};
+		5EBFD90214E192450042AC70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD90314E192450042AC70 /* FakeWeb-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EBFD91514E192450042AC70 /* FakeWebTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD92714E192A80042AC70 /* Library */,
+				5EBFD92614E192A00042AC70 /* Spec */,
+				5EBFD91614E192450042AC70 /* Supporting Files */,
+			);
+			path = FakeWebTests;
+			sourceTree = "<group>";
+		};
+		5EBFD91614E192450042AC70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD91714E192450042AC70 /* FakeWebTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EBFD92614E192A00042AC70 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD96C14E197750042AC70 /* FakeWebTests.m */,
+			);
+			name = Spec;
+			sourceTree = "<group>";
+		};
+		5EBFD92714E192A80042AC70 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD93214E195650042AC70 /* ASIHTTPRequest */,
+				5EBFD96814E196F10042AC70 /* Reachability */,
+				5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		5EBFD93214E195650042AC70 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD93314E1957A0042AC70 /* ASIAuthenticationDialog.h */,
+				5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */,
+				5EBFD93514E1957A0042AC70 /* ASICacheDelegate.h */,
+				5EBFD93614E1957A0042AC70 /* ASIDataCompressor.h */,
+				5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */,
+				5EBFD93814E1957A0042AC70 /* ASIDataDecompressor.h */,
+				5EBFD93914E1957A0042AC70 /* ASIDataDecompressor.m */,
+				5EBFD93A14E1957A0042AC70 /* ASIDownloadCache.h */,
+				5EBFD93B14E1957A0042AC70 /* ASIDownloadCache.m */,
+				5EBFD93C14E1957A0042AC70 /* ASIFormDataRequest.h */,
+				5EBFD93D14E1957A0042AC70 /* ASIFormDataRequest.m */,
+				5EBFD93E14E1957A0042AC70 /* ASIHTTPRequest.h */,
+				5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */,
+				5EBFD94014E1957A0042AC70 /* ASIHTTPRequestConfig.h */,
+				5EBFD94114E1957A0042AC70 /* ASIHTTPRequestDelegate.h */,
+				5EBFD94214E1957A0042AC70 /* ASIInputStream.h */,
+				5EBFD94314E1957A0042AC70 /* ASIInputStream.m */,
+				5EBFD94414E1957A0042AC70 /* ASINetworkQueue.h */,
+				5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */,
+				5EBFD94614E1957A0042AC70 /* ASIProgressDelegate.h */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		5EBFD95414E195EF0042AC70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD95D14E195EF0042AC70 /* libKiwi.a */,
+				5EBFD95F14E195EF0042AC70 /* KiwiTests.octest */,
+				5EBFD96114E195EF0042AC70 /* KiwiExamples.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EBFD96814E196F10042AC70 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				5EBFD96914E196F10042AC70 /* Reachability.h */,
+				5EBFD96A14E196F10042AC70 /* Reachability.m */,
+			);
+			name = Reachability;
+			path = "externals/asi-http-request/External/Reachability";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5EBFD8FA14E192450042AC70 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5EBFD8FB14E192450042AC70 /* FakeWeb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EBFD92014E192450042AC70 /* Build configuration list for PBXNativeTarget "FakeWeb" */;
+			buildPhases = (
+				5EBFD8F814E192450042AC70 /* Sources */,
+				5EBFD8F914E192450042AC70 /* Frameworks */,
+				5EBFD8FA14E192450042AC70 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeWeb;
+			productName = FakeWeb;
+			productReference = 5EBFD8FC14E192450042AC70 /* libFakeWeb.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5EBFD90B14E192450042AC70 /* FakeWebTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EBFD92314E192450042AC70 /* Build configuration list for PBXNativeTarget "FakeWebTests" */;
+			buildPhases = (
+				5EBFD90714E192450042AC70 /* Sources */,
+				5EBFD90814E192450042AC70 /* Frameworks */,
+				5EBFD90914E192450042AC70 /* Resources */,
+				5EBFD90A14E192450042AC70 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EBFD96314E195F90042AC70 /* PBXTargetDependency */,
+				5EBFD91314E192450042AC70 /* PBXTargetDependency */,
+			);
+			name = FakeWebTests;
+			productName = FakeWebTests;
+			productReference = 5EBFD90C14E192450042AC70 /* FakeWebTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EBFD8F314E192450042AC70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Toshihiro Morimoto (id:dealforest)";
+			};
+			buildConfigurationList = 5EBFD8F614E192450042AC70 /* Build configuration list for PBXProject "FakeWeb" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5EBFD8F114E192450042AC70;
+			productRefGroup = 5EBFD8FD14E192450042AC70 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5EBFD95414E195EF0042AC70 /* Products */;
+					ProjectRef = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5EBFD8FB14E192450042AC70 /* FakeWeb */,
+				5EBFD90B14E192450042AC70 /* FakeWebTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5EBFD95D14E195EF0042AC70 /* libKiwi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKiwi.a;
+			remoteRef = 5EBFD95C14E195EF0042AC70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5EBFD95F14E195EF0042AC70 /* KiwiTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiTests.octest;
+			remoteRef = 5EBFD95E14E195EF0042AC70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5EBFD96114E195EF0042AC70 /* KiwiExamples.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiExamples.octest;
+			remoteRef = 5EBFD96014E195EF0042AC70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EBFD90914E192450042AC70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EBFD90A14E192450042AC70 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EBFD8F814E192450042AC70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EBFD90714E192450042AC70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EBFD94714E1957A0042AC70 /* ASIAuthenticationDialog.m in Sources */,
+				5EBFD94814E1957A0042AC70 /* ASIDataCompressor.m in Sources */,
+				5EBFD94914E1957A0042AC70 /* ASIDataDecompressor.m in Sources */,
+				5EBFD94A14E1957A0042AC70 /* ASIDownloadCache.m in Sources */,
+				5EBFD94B14E1957A0042AC70 /* ASIFormDataRequest.m in Sources */,
+				5EBFD94C14E1957A0042AC70 /* ASIHTTPRequest.m in Sources */,
+				5EBFD94D14E1957A0042AC70 /* ASIInputStream.m in Sources */,
+				5EBFD94E14E1957A0042AC70 /* ASINetworkQueue.m in Sources */,
+				5EBFD96B14E196F10042AC70 /* Reachability.m in Sources */,
+				5EBFD96D14E197750042AC70 /* FakeWebTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EBFD91314E192450042AC70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EBFD8FB14E192450042AC70 /* FakeWeb */;
+			targetProxy = 5EBFD91214E192450042AC70 /* PBXContainerItemProxy */;
+		};
+		5EBFD96314E195F90042AC70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Kiwi;
+			targetProxy = 5EBFD96214E195F90042AC70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5EBFD91E14E192450042AC70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5EBFD91F14E192450042AC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EBFD92114E192450042AC70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FakeWeb.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5EBFD92214E192450042AC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FakeWeb.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5EBFD92414E192450042AC70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
+				HEADER_SEARCH_PATHS = externals/KiWi/KiWi;
+				INFOPLIST_FILE = "FakeWebTests/FakeWebTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5EBFD92514E192450042AC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
+				HEADER_SEARCH_PATHS = externals/KiWi/KiWi;
+				INFOPLIST_FILE = "FakeWebTests/FakeWebTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EBFD8F614E192450042AC70 /* Build configuration list for PBXProject "FakeWeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EBFD91E14E192450042AC70 /* Debug */,
+				5EBFD91F14E192450042AC70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EBFD92014E192450042AC70 /* Build configuration list for PBXNativeTarget "FakeWeb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EBFD92114E192450042AC70 /* Debug */,
+				5EBFD92214E192450042AC70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5EBFD92314E192450042AC70 /* Build configuration list for PBXNativeTarget "FakeWebTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EBFD92414E192450042AC70 /* Debug */,
+				5EBFD92514E192450042AC70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EBFD8F314E192450042AC70 /* Project object */;
+}
