@@ -10,7 +10,7 @@
 
 #import "Kiwi.h"
 
-SPEC_BEGIN(FakeWebSpec)
+SPEC_BEGIN(MathSpec)
 
 describe(@"FakeWeb", ^{
     context(@"Synchronous request", ^{
