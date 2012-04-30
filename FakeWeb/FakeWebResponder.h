@@ -9,21 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @interface FakeWebResponder : NSObject {
-    NSString    *uri_;
-    NSString    *method_;
-    NSString    *statusMessage_;
-    int         status_;
-    BOOL        raiseException_;
+    NSString    *_uri;
+    NSString    *_method;
+    NSString    *_statusMessage;
+    int         _status;
+    BOOL        _raiseException;
 }
 
-@property (nonatomic, retain) NSString *uri;
-@property (nonatomic, retain) NSString *method;
-@property (nonatomic, retain) NSString *statusMessage;
+@property (nonatomic, strong) NSString *uri;
+@property (nonatomic, strong) NSString *method;
+@property (nonatomic, strong) NSString *statusMessage;
 @property (nonatomic) int status;
 @property (nonatomic) BOOL raiseException;
 
 -(id) initWithUri:(NSString*)uri method:(NSString*)method status:(int)status statusMessage:(NSString*)statusMessage;
-
--(void) setRaiseException:(BOOL)isRaiseException;
 
 @end
