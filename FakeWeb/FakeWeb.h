@@ -11,30 +11,44 @@
 
 @interface FakeWeb : NSObject
 
-+(void) registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(int)status statusMessage:(NSString*)statusMessage;
-+(void) registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(int)status;
-+(void) registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body;
+//--------------------------------------------------------------//
+#pragma mark -- register --
+//--------------------------------------------------------------//
 
-+(BOOL) registeredUri:(NSString*)uri;
-+(BOOL) registeredUri:(NSString*)uri method:(NSString*)method;
++(void) registerUri:(NSString *)uri method:(NSString *)method rotatingBody:(NSArray *)bodies;
 
++(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(int)status statusMessage:(NSString *)statusMessage;
++(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(int)status;
++(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body;
 
-+(void) registerPassthroughUri:(NSString*)uri;
-+(void) registerPassthroughUri:(NSString*)uri method:(NSString*)method;
++(BOOL) registeredPassthroughUri:(NSString *)uri;
++(BOOL) registeredPassthroughUri:(NSString *)uri method:(NSString *)method;
 
-+(BOOL) registeredPassthroughUri:(NSString*)uri;
-+(BOOL) registeredPassthroughUri:(NSString*)uri method:(NSString*)method;
+//--------------------------------------------------------------//
+#pragma mark -- confirm --
+//--------------------------------------------------------------//
 
++(void) registerPassthroughUri:(NSString *)uri;
++(void) registerPassthroughUri:(NSString *)uri method:(NSString *)method;
 
-+(void) raiseNetConnectException:(NSURL*)uri;
-+(void) raiseNetConnectException:(NSURL*)uri method:(NSString*)method;
++(BOOL) registeredUri:(NSString *)uri;
++(BOOL) registeredUri:(NSString *)uri method:(NSString *)method;
 
-//+(FakeWebResponder*) responseFor:(NSString*)uri method:(NSString*)method;
-+(FakeWebResponder*) responderFor:(NSString*)uri method:(NSString*)method;
+//--------------------------------------------------------------//
+#pragma mark -- thorow exception --
+//--------------------------------------------------------------//
+
++(void) raiseNetConnectException:(NSString *)uri;
++(void) raiseNetConnectException:(NSString *)uri method:(NSString *)method;
+
+//--------------------------------------------------------------//
+#pragma mark -- settings --
+//--------------------------------------------------------------//
 
 +(BOOL) allowNetConnet;
 +(BOOL) setAllowNetConnet:(BOOL)isConnect;
-
 +(void) cleanRegistry;
+
++(FakeWebResponder*) responderFor:(NSString *)uri method:(NSString *)method;
 
 @end
