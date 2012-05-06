@@ -21,15 +21,15 @@
 +(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(int)status;
 +(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body;
 
-+(BOOL) registeredPassthroughUri:(NSString *)uri;
-+(BOOL) registeredPassthroughUri:(NSString *)uri method:(NSString *)method;
-
-//--------------------------------------------------------------//
-#pragma mark -- confirm --
-//--------------------------------------------------------------//
-
 +(void) registerPassthroughUri:(NSString *)uri;
 +(void) registerPassthroughUri:(NSString *)uri method:(NSString *)method;
+
+//--------------------------------------------------------------//
+#pragma mark -- check --
+//--------------------------------------------------------------//
+
++(BOOL) registeredPassthroughUri:(NSString *)uri;
++(BOOL) registeredPassthroughUri:(NSString *)uri method:(NSString *)method;
 
 +(BOOL) registeredUri:(NSString *)uri;
 +(BOOL) registeredUri:(NSString *)uri method:(NSString *)method;
@@ -48,7 +48,5 @@
 +(BOOL) allowNetConnet;
 +(BOOL) setAllowNetConnet:(BOOL)isConnect;
 +(void) cleanRegistry;
-
-+(FakeWebResponder*) responderFor:(NSString *)uri method:(NSString *)method;
 
 @end

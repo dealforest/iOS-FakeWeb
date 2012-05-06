@@ -8,7 +8,7 @@
 
 #import "FakeWeb.h"
 
-#define ALL_HTTP_METHOD [NSArray arrayWithObjects: @"GET", @"POST", @"PUT", @"DELETE", nil]
+#define ALL_HTTP_METHOD [NSArray arrayWithObjects:@"GET", @"POST", @"PUT", @"DELETE", nil]
 
 static NSMutableDictionary *uriMap;
 static NSMutableDictionary *passthroughUriMap;
@@ -16,20 +16,13 @@ static NSMutableDictionary *raiseExceptionUriMap;
 static BOOL allowNetConnect;
 static BOOL autoCleanup;
 
-@interface FakeWeb(Private)
-+(FakeWebResponder*) uriMapMatches:(NSMutableDictionary*)map uri:(NSString*)uri method:(NSString*)method type:(NSString*)type;
-+(NSArray *) convertToMethodList:(NSString *)method;
-+(NSString*) normalizeUri:(NSString*)uri;
-+(NSString*) sortQuery:(NSString*)uri;
-@end
-
 @implementation FakeWeb
 
-+ (void)initialize 
++ (void)initialize
 {
-    uriMap = [NSMutableDictionary dictionary];
-    passthroughUriMap = [NSMutableDictionary dictionary];
-    raiseExceptionUriMap = [NSMutableDictionary dictionary];
+    uriMap = [NSMutableDictionary new];
+    passthroughUriMap = [NSMutableDictionary new];
+    raiseExceptionUriMap = [NSMutableDictionary new];
     allowNetConnect = autoCleanup = TRUE;
 }
 
@@ -39,6 +32,14 @@ static BOOL autoCleanup;
 
 +(void) registerUri:(NSString*)uri method:(NSString*)method rotatingBody:(NSArray *)bodies
 {
+    for (NSDictionary *body in bodies)
+    {
+        [self registerUri:uri 
+                   method:method 
+                     body:[body objectForKey:@"body"]
+                    staus:[[body objectForKey:@"status"] intValue]
+            statusMessage:[body objectForKey:@"statusMessage"]];
+    }
 }
 
 + (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(int)status
@@ -55,20 +56,19 @@ static BOOL autoCleanup;
 {
     if (!method) return;
     
-    NSString *key = [self keyForUri:uri method:method];
     FakeWebResponder *responder = [[FakeWebResponder alloc] initWithUri:uri method:method status:status statusMessage:statusMessage];
 
-    NSMutableArray *responders = (NSMutableArray *)[uriMap objectForKey:key];
-    if (responders)
+    NSArray *methods = [self convertToMethodList:method];
+    for (NSString *method_ in methods)
     {
-        [responders addObject:responder];
+        NSString *key = [self keyForUri:uri method:method_];
+        NSMutableArray *responders = (NSMutableArray *)[uriMap objectForKey:key];
+        if (responders)
+            [responders addObject:responder];
+        else 
+            responders = [NSMutableArray arrayWithObjects:responder, nil];
+        [uriMap setObject:responders forKey:key];
     }
-    else 
-    {
-        responders = [NSMutableArray arrayWithObjects:responder, nil];
-    }
-
-    [uriMap setObject:responders forKey:key];
 }
 
 + (void)registerPassthroughUri:(NSString*)uri 
@@ -78,12 +78,16 @@ static BOOL autoCleanup;
 
 + (void)registerPassthroughUri:(NSString*)uri method:(NSString*)method 
 {
-    NSString *key = [self keyForUri:uri method:method];
-    [passthroughUriMap setValue:[NSString stringWithFormat:@"%d", YES] forKey:key];
+    NSArray *methods = [self convertToMethodList:method];
+    for (NSString *method_ in methods)
+    {
+        NSString *key = [self keyForUri:uri method:method_];
+        [passthroughUriMap setValue:[NSString stringWithFormat:@"%d", YES] forKey:key];
+    }
 }
 
 //--------------------------------------------------------------//
-#pragma mark -- confirm --
+#pragma mark -- check --
 //--------------------------------------------------------------//
 
 + (BOOL)registeredUri:(NSString*)uri 
@@ -96,8 +100,9 @@ static BOOL autoCleanup;
     NSArray *methods = [self convertToMethodList:method];
     for (NSString *method_ in methods)
     {
-        NSString *key = [self keyForUri:uri method:method];
-        return [uriMap objectForKey:key] ? YES : NO;
+        NSString *key = [self keyForUri:uri method:method_];
+        NSMutableArray *responders = (NSMutableArray *)[uriMap objectForKey:key];
+        return [responders count] > 0 ? YES : NO;
     }
     return NO;
 }
@@ -109,8 +114,14 @@ static BOOL autoCleanup;
 
 + (BOOL)registeredPassthroughUri:(NSString*)uri method:(NSString*)method
 {
-    NSString *key = [self keyForUri:uri method:method];
-    return [passthroughUriMap objectForKey:key] ? TRUE : FALSE;
+    NSArray *methods = [self convertToMethodList:method];
+    for (NSString *method_ in methods)
+    {
+        NSString *key = [self keyForUri:uri method:method_];
+        if ([passthroughUriMap objectForKey:key])
+            return TRUE;
+    }
+    return FALSE;
 }
 
 //--------------------------------------------------------------//
@@ -223,7 +234,7 @@ static BOOL autoCleanup;
 +(NSString*) sortQuery:(NSString *)uri
 {
     NSArray *url = [uri componentsSeparatedByString:@"?"];
-    if ([url objectAtIndex:1]) 
+    if ([url count] > 1)
     {
         NSArray *params = [[url objectAtIndex:1] componentsSeparatedByString:@"&"];
         NSArray *sortParams = [params sortedArrayUsingSelector:@selector(compare:)];

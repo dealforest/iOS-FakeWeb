@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E76D16D1556B7F200D02664 /* FakeWeb_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E76D16C1556B7F200D02664 /* FakeWeb_Private.h */; };
 		5EBFD90014E192450042AC70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FF14E192450042AC70 /* Foundation.framework */; };
 		5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD90514E192450042AC70 /* FakeWeb.m */; };
 		5EBFD90E14E192450042AC70 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD90D14E192450042AC70 /* SenTestingKit.framework */; };
@@ -31,7 +32,6 @@
 		5EBFD96D14E197750042AC70 /* FakeWebTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD96C14E197750042AC70 /* FakeWebTests.m */; };
 		5EBFD97F14E827500042AC70 /* FakeWebResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EBFD97D14E827500042AC70 /* FakeWebResponder.h */; };
 		5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD97E14E827500042AC70 /* FakeWebResponder.m */; };
-		5EBFD98114E827500042AC70 /* FakeWebResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD97E14E827500042AC70 /* FakeWebResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E76D16C1556B7F200D02664 /* FakeWeb_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeWeb_Private.h; sourceTree = "<group>"; };
 		5EBFD8FC14E192450042AC70 /* libFakeWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFakeWeb.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBFD8FF14E192450042AC70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EBFD90314E192450042AC70 /* FakeWeb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakeWeb-Prefix.pch"; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 				5EBFD97D14E827500042AC70 /* FakeWebResponder.h */,
 				5EBFD97E14E827500042AC70 /* FakeWebResponder.m */,
 				5EBFD90214E192450042AC70 /* Supporting Files */,
+				5E76D16C1556B7F200D02664 /* FakeWeb_Private.h */,
 			);
 			path = FakeWeb;
 			sourceTree = "<group>";
@@ -289,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBFD97F14E827500042AC70 /* FakeWebResponder.h in Headers */,
+				5E76D16D1556B7F200D02664 /* FakeWeb_Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +442,6 @@
 				5EBFD94E14E1957A0042AC70 /* ASINetworkQueue.m in Sources */,
 				5EBFD96B14E196F10042AC70 /* Reachability.m in Sources */,
 				5EBFD96D14E197750042AC70 /* FakeWebTests.m in Sources */,
-				5EBFD98114E827500042AC70 /* FakeWebResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
