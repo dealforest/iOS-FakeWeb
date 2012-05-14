@@ -10,7 +10,7 @@
 
 #import "Kiwi.h"
 #import "FakeWeb.h"
-#import "FakeWeb_Private.h"
+#import "FakeWeb+Private.h"
 
 SPEC_BEGIN(FakeWebSpec)
 
@@ -48,7 +48,6 @@ describe(@"FakeWeb", ^{
         NSString __block *url1= @"http://exsample.com/";
         NSString __block *url2 = @"http://exsample.com/hoge/fuga?test=1";
         NSString __block *url3 = @"http://exsample.com/hoge";
-        NSString __block *url4 = @"http://exsample.com/fooo/bar";
         
         context(@"'registerUri'", ^{
             it(@"regsiter", ^{

@@ -1,5 +1,5 @@
 //
-//  FakeWeb_Private.h
+//  FakeWeb+Private.h
 //  FakeWeb
 //
 //  Created by Toshirhio Morimoto on 5/6/12.
