@@ -56,7 +56,7 @@ static BOOL autoCleanup;
 {
     if (!method) return;
     
-    FakeWebResponder *responder = [[FakeWebResponder alloc] initWithUri:uri method:method status:status statusMessage:statusMessage];
+    FakeWebResponder *responder = [[FakeWebResponder alloc] initWithUri:uri method:method body:body status:status statusMessage:statusMessage];
 
     NSArray *methods = [self convertToMethodList:method];
     for (NSString *method_ in methods)
@@ -184,9 +184,10 @@ static BOOL autoCleanup;
 +(FakeWebResponder *) uriMapMatches:(NSMutableDictionary *)map uri:(NSString *)uri method:(NSString *)method type:(NSString *)type
 {
     NSString *key = [self keyForUri:uri method:method];
+    
     if ([type isEqualToString:@"URI"]) 
     {
-        return [map objectForKey:key];
+        return [self matchFirstResponser:map key:key];
     }
     else {
         NSArray *methods = [self convertToMethodList:method];
@@ -205,12 +206,28 @@ static BOOL autoCleanup;
                 
                 if ([regex numberOfMatchesInString:key options:0 range:NSMakeRange(0, [key length])] > 0) 
                 {
-                    return [uriMap objectForKey:key_];
+                    return [self matchFirstResponser:map key:key_];
                 }
             }
         }
     }
     return nil;
+}
+
++(FakeWebResponder *) matchFirstResponser:(NSDictionary *)map key:(NSString *)key
+{
+    NSMutableArray *responders = [map objectForKey:key];
+    if ([responders count] == 1)
+    {
+        return [responders objectAtIndex:0];
+    }
+    else
+    {
+        FakeWebResponder *responder = [responders objectAtIndex:0];
+        [responders removeObjectAtIndex:0];
+        [responders addObject:responder];
+        return responder;
+    }
 }
 
 +(NSArray *) convertToMethodList:(NSString *)method 

@@ -7,6 +7,7 @@
 //
 
 #import "ASIHTTPRequest+FakeWeb.h"
+#import "FakeWeb.h"
 #import "FakeWeb+Private.h"
 #import <objc/runtime.h> 
 #import <objc/message.h>
@@ -25,35 +26,53 @@
 
 - (FakeWebResponder *)lookup
 {
-    return nil;
+    return [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
 }
 
 -(void) overrideStartSynchronous
 {
     FakeWebResponder *responder = [self lookup];
-    if (!responder)
+    if (responder)
         return;
         
-    [self startSynchronous];
+    [self overrideStartSynchronous];
 }
 
 -(void) overrideStartAsynchronous
 {
     FakeWebResponder *responder = [self lookup];
-    if (!responder)
-        return;
-    
-    [self startAsynchronous];
+    if (responder)
+    {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.0001), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+			dispatch_async( dispatch_get_main_queue(), ^{
+				completionBlock();
+			});
+		});
+    }
+    else 
+    {
+        [self overrideStartAsynchronous];
+    }
 }
 
 - (int)overrideResponseStatusCode 
 {
-    return 200;
+    FakeWebResponder *responder = [self lookup];
+    if (responder)
+    {
+        return [responder status];
+    }
+    return [self overrideResponseStatusCode];
 }
 
 - (NSString *)overrideResponseString
 {
-    return @"hogehoge";
+    FakeWebResponder *responder = [self lookup];
+    if (responder)
+    {
+        return [responder body];
+    }
+    return [self overrideResponseString];
 }
 
 - (NSData *) overrideResponseData 
