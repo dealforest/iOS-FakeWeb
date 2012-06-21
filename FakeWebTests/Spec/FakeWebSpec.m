@@ -15,23 +15,14 @@
 SPEC_BEGIN(FakeWebSpec)
 
 describe(@"FakeWeb", ^{
-//    context(@"Synchronous request", ^{
-//    });
-//    context(@"Asynchronous request", ^{
-//    });
-//    context(@"Clearing registered URIs", ^{
-//    });
-//    context(@"Blocking all real requests", ^{
-//    });
-//    context(@"Allowing requests to a specific server", ^{
-//    });
-//    context(@"Specifying HTTP response headers", ^{
-//    });
-    
     context(@"When non-dependence", ^{
+        beforeAll(^{
+            [FakeWeb setAllowNetConnet:YES];
+        });
+        
         context(@"'allowNetConnet'", ^{
             it(@"setter and getter", ^{
-                [[theValue([FakeWeb allowNetConnet]) should] beTrue];
+                [[theValue([FakeWeb allowNetConnet]) should] beYes];
                 [[theValue([FakeWeb setAllowNetConnet:NO]) should] beFalse];
                 [[theValue([FakeWeb allowNetConnet]) should] beFalse];
                 [[theValue([FakeWeb setAllowNetConnet:YES]) should] beTrue];

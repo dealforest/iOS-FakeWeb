@@ -38,7 +38,6 @@
 #pragma mark -- thorow exception --
 //--------------------------------------------------------------//
 
-+(void) raiseNetConnectException:(NSString *)uri;
 +(void) raiseNetConnectException:(NSString *)uri method:(NSString *)method;
 
 //--------------------------------------------------------------//

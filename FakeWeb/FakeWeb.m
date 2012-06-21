@@ -10,9 +10,11 @@
 
 #define ALL_HTTP_METHOD [NSArray arrayWithObjects:@"GET", @"POST", @"PUT", @"DELETE", nil]
 
+NSString * const FakeWebRequestKey = @"FakeWebRequestKey";
+NSString * const FakeWebNotAllowedNetConnetException = @"FakeWebNotAllowedNetConnetException";
+
 static NSMutableDictionary *uriMap;
 static NSMutableDictionary *passthroughUriMap;
-static NSMutableDictionary *raiseExceptionUriMap;
 static BOOL allowNetConnect;
 static BOOL autoCleanup;
 
@@ -22,7 +24,6 @@ static BOOL autoCleanup;
 {
     uriMap = [NSMutableDictionary new];
     passthroughUriMap = [NSMutableDictionary new];
-    raiseExceptionUriMap = [NSMutableDictionary new];
     allowNetConnect = autoCleanup = TRUE;
 }
 
@@ -128,15 +129,11 @@ static BOOL autoCleanup;
 #pragma mark -- thorow exception --
 //--------------------------------------------------------------//
 
-+ (void)raiseNetConnectException:(NSString *)uri
-{
-    [self raiseNetConnectException:uri method:@"ANY"];
-}
-
 + (void)raiseNetConnectException:(NSString *)uri method:(NSString*)method
 {
-    NSString *key = [self keyForUri:uri method:method];
-    [raiseExceptionUriMap setValue:[NSString stringWithFormat:@"%d", TRUE] forKey:key];
+	@throw [NSException exceptionWithName:FakeWebNotAllowedNetConnetException
+                                   reason:[self keyForUri:uri method:method]
+                                 userInfo:nil];
 }
 
 //--------------------------------------------------------------//
@@ -158,11 +155,15 @@ static BOOL autoCleanup;
 {
     [uriMap removeAllObjects];
     [passthroughUriMap removeAllObjects];
-    [raiseExceptionUriMap removeAllObjects];
 }
 
 + (FakeWebResponder*)responderFor:(NSString*)uri method:(NSString*)method
 {
+    if (allowNetConnect == NO) {
+        [self raiseNetConnectException:uri method:method];
+        return nil;
+    }
+
     FakeWebResponder *responder;
     responder = [self uriMapMatches:uriMap uri:uri method:method type:@"URI"];
     if (responder) return responder;
