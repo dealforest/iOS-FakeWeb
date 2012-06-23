@@ -38,14 +38,15 @@ void Swizzle(Class c, SEL orig, SEL new);
 
 -(void) overrideStartAsynchronous
 {
-    FakeWebResponder *responder = [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
+    FakeWebResponder __block *responder = [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
+    [FakeWeb setMatchingResponder:nil];
     if (responder)
     {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.0001), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-			dispatch_async( dispatch_get_main_queue(), ^{
-				completionBlock();
-			});
-		});
+        double delayInSeconds = 0.001;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [FakeWeb setMatchingResponder:responder];
+        });
     }
     else 
     {
@@ -55,38 +56,34 @@ void Swizzle(Class c, SEL orig, SEL new);
 
 - (NSInteger)overrideResponseStatusCode 
 {
-    FakeWebResponder *responder = [FakeWeb machingResponder];
-    if (responder)
-    {
-        return [responder status];
-    }
-    return [self overrideResponseStatusCode];
+    FakeWebResponder *responder = [FakeWeb matchingResponder];
+    return responder
+        ? [responder status]
+        : [self overrideResponseStatusCode];
 }
 
 - (NSString *)overrideResponseStatusMessage
 {
-    FakeWebResponder *responder = [FakeWeb machingResponder];
-    if (responder)
-    {
-        return [responder statusMessage];
-    }
-    return [self overrideResponseStatusMessage];
+    FakeWebResponder *responder = [FakeWeb matchingResponder];
+    return responder
+        ? [responder statusMessage]
+        : [self responseStatusMessage];
 }
 
 - (NSString *)overrideResponseString
 {
-    FakeWebResponder *responder = [FakeWeb machingResponder];
-    if (responder)
-    {
-        return [responder body];
-    }
-    return [self overrideResponseString];
+    FakeWebResponder *responder = [FakeWeb matchingResponder];
+    return responder
+        ? [responder body]
+        : [self overrideResponseString];
 }
 
 - (NSData *) overrideResponseData 
 {
-    NSString *responseString = [self overrideResponseString];
-    return [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    FakeWebResponder *responder = [FakeWeb matchingResponder];
+    return responder
+        ? [[responder body] dataUsingEncoding:NSUTF8StringEncoding]
+        : [self overrideResponseData];
 }
 
 /*

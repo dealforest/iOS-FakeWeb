@@ -10,7 +10,9 @@
 
 @interface FakeWeb (private)
 
-+(FakeWebResponder *) machingResponder;
++(FakeWebResponder *) matchingResponder;
+
++(void) setMatchingResponder:(FakeWebResponder *)responder;
 
 +(FakeWebResponder *) responderFor:(NSString *)uri method:(NSString *)method;
 

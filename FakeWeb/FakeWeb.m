@@ -17,7 +17,7 @@ static NSMutableDictionary *uriMap;
 static NSMutableDictionary *passthroughUriMap;
 static BOOL allowNetConnect;
 static BOOL autoCleanup;
-static FakeWebResponder *mattingResponder;
+static FakeWebResponder *matchingResponder;
 
 @implementation FakeWeb
 
@@ -26,7 +26,7 @@ static FakeWebResponder *mattingResponder;
     uriMap = [NSMutableDictionary new];
     passthroughUriMap = [NSMutableDictionary new];
     allowNetConnect = autoCleanup = TRUE;
-    mattingResponder = nil;
+    matchingResponder = nil;
 }
 
 //--------------------------------------------------------------//
@@ -182,7 +182,7 @@ static FakeWebResponder *mattingResponder;
 
 + (FakeWebResponder *)responderFor:(NSString *)uri method:(NSString *)method
 {
-    mattingResponder = nil;
+    matchingResponder = nil;
     if (allowNetConnect == NO && [self registeredPassthroughUri:uri method:method] == NO) {
         [self raiseNetConnectException:uri method:method];
         return nil;
@@ -206,8 +206,12 @@ static FakeWebResponder *mattingResponder;
 #pragma mark -- private --
 //--------------------------------------------------------------//
 
-+(FakeWebResponder *) machingResponder {
-    return mattingResponder;
++(FakeWebResponder *) matchingResponder {
+    return matchingResponder;
+}
+
++(void) setMatchingResponder:(FakeWebResponder *)responder {
+    matchingResponder = responder;
 }
 
 +(FakeWebResponder *) uriMapMatches:(NSMutableDictionary *)map uri:(NSString *)uri method:(NSString *)method type:(NSString *)type
@@ -216,8 +220,8 @@ static FakeWebResponder *mattingResponder;
     
     if ([type isEqualToString:@"URI"]) 
     {
-        mattingResponder = [self matchFirstResponser:map key:key];
-        return mattingResponder;
+        matchingResponder = [self matchFirstResponser:map key:key];
+        return matchingResponder;
     }
     else {
         NSArray *methods = [self convertToMethodList:method];
@@ -236,8 +240,8 @@ static FakeWebResponder *mattingResponder;
                 
                 if ([regex numberOfMatchesInString:key options:0 range:NSMakeRange(0, [key length])] > 0) 
                 {
-                    mattingResponder = [self matchFirstResponser:map key:key_];
-                    return mattingResponder;
+                    matchingResponder = [self matchFirstResponser:map key:key_];
+                    return matchingResponder;
                 }
             }
         }

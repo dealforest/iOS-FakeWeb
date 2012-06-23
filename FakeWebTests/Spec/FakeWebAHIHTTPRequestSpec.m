@@ -57,27 +57,20 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
             it(@"process is not allowed net connect on non-regsiter", ^{
                 [FakeWeb setAllowNetConnet:NO];
                 
-                @try {
+                [[theBlock(^{ 
                     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
                     [request startSynchronous];
-                }
-                @catch (NSException *exception) {
-                    [[[exception name] should] equal:@"FakeWebNotAllowedNetConnetException"];
-                }
+                }) should] raiseWithName:@"FakeWebNotAllowedNetConnetException"];
             });
             
             it(@"process is not allowed net connect already regsiter", ^{
                 [FakeWeb setAllowNetConnet:NO];
-                
                 [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" staus:200];
                 
-                @try {
+                [[theBlock(^{ 
                     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
                     [request startSynchronous];
-                }
-                @catch (NSException *exception) {
-                    [[[exception name] should] equal:@"FakeWebNotAllowedNetConnetException"];
-                }
+                }) should] raiseWithName:@"FakeWebNotAllowedNetConnetException"];
             });
         });
     });
@@ -162,6 +155,19 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
                 [request setPassword:@"pass"];
                 [request startSynchronous];
                 [[[request responseString] should] equal:@"Authorized"];
+            });
+        });
+    });
+    
+    context(@"when async request", ^{
+        context(@"registerUri", ^{
+            it(@"normal process", ^{
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge"];
+                
+                ASIHTTPRequest *request;
+                request = [ASIHTTPRequest requestWithURL:url];
+                [request startAsynchronous];
+                [[expectFutureValue([request responseString]) shouldEventually] equal:@"hoge"];
             });
         });
     });
