@@ -17,6 +17,7 @@ static NSMutableDictionary *uriMap;
 static NSMutableDictionary *passthroughUriMap;
 static BOOL allowNetConnect;
 static BOOL autoCleanup;
+static FakeWebResponder *mattingResponder;
 
 @implementation FakeWeb
 
@@ -25,25 +26,52 @@ static BOOL autoCleanup;
     uriMap = [NSMutableDictionary new];
     passthroughUriMap = [NSMutableDictionary new];
     allowNetConnect = autoCleanup = TRUE;
+    mattingResponder = nil;
+}
+
+//--------------------------------------------------------------//
+#pragma mark -- getter --
+//--------------------------------------------------------------//
+
++(FakeWebResponder *) mattingResponder {
+    return mattingResponder;
 }
 
 //--------------------------------------------------------------//
 #pragma mark -- register --
 //--------------------------------------------------------------//
 
-+(void) registerUri:(NSString*)uri method:(NSString*)method rotatingBody:(NSArray *)bodies
++(void) registerUri:(NSString *)uri method:(NSString *)method responses:(NSArray *)responses
 {
-    for (NSDictionary *body in bodies)
+    if (!method) return;
+    
+    NSMutableArray *responders = [NSMutableArray array];
+    for (NSDictionary *response in responses) {
+        NSString *body = [response objectForKey:@"body"];
+        if ([body length] == 0) continue;
+        
+        NSInteger statusCode = 200;
+        id status = [response objectForKey:@"status"];
+        if ([status isKindOfClass:[NSString class]] || [status isKindOfClass:[NSNumber class]])
+            statusCode = [(NSString *)status integerValue];
+    
+        FakeWebResponder *responder = [[FakeWebResponder alloc] initWithUri:uri 
+                                                                     method:method 
+                                                                       body:body
+                                                                     status:statusCode
+                                                              statusMessage:[response objectForKey:@"statusMessage"]];
+        [responders addObject:responder];
+    }
+    if ([responders count] == 0) return;
+    
+    NSArray *methods = [self convertToMethodList:method];
+    for (NSString *method_ in methods)
     {
-        [self registerUri:uri 
-                   method:method 
-                     body:[body objectForKey:@"body"]
-                    staus:[[body objectForKey:@"status"] intValue]
-            statusMessage:[body objectForKey:@"statusMessage"]];
+        [uriMap setObject:responders forKey:[self keyForUri:uri method:method_]];
     }
 }
 
-+ (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(int)status
++ (void)registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(NSInteger)status
 {
     [self registerUri:uri method:method body:body staus:status statusMessage:nil];
 }
@@ -53,7 +81,7 @@ static BOOL autoCleanup;
     [self registerUri:uri method:method body:body staus:200 statusMessage:nil];
 }
 
-+ (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(int)status statusMessage:(NSString*)statusMessage 
++ (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(NSInteger)status statusMessage:(NSString*)statusMessage 
 {
     if (!method) return;
     
@@ -65,14 +93,17 @@ static BOOL autoCleanup;
         NSString *key = [self keyForUri:uri method:method_];
         NSMutableArray *responders = (NSMutableArray *)[uriMap objectForKey:key];
         if (responders)
+        {
+            [responders removeAllObjects];
             [responders addObject:responder];
+        }
         else 
             responders = [NSMutableArray arrayWithObjects:responder, nil];
         [uriMap setObject:responders forKey:key];
     }
 }
 
-+ (void)registerPassthroughUri:(NSString*)uri 
++(void) registerPassthroughUri:(NSString *)uri
 {
     [self registerPassthroughUri:uri method:@"ANY"];
 }
@@ -157,9 +188,10 @@ static BOOL autoCleanup;
     [passthroughUriMap removeAllObjects];
 }
 
-+ (FakeWebResponder*)responderFor:(NSString*)uri method:(NSString*)method
++ (FakeWebResponder *)responderFor:(NSString *)uri method:(NSString *)method
 {
-    if (allowNetConnect == NO) {
+    mattingResponder = nil;
+    if (allowNetConnect == NO && [self registeredPassthroughUri:uri method:method] == NO) {
         [self raiseNetConnectException:uri method:method];
         return nil;
     }
@@ -188,7 +220,8 @@ static BOOL autoCleanup;
     
     if ([type isEqualToString:@"URI"]) 
     {
-        return [self matchFirstResponser:map key:key];
+        mattingResponder = [self matchFirstResponser:map key:key];
+        return mattingResponder;
     }
     else {
         NSArray *methods = [self convertToMethodList:method];
@@ -207,7 +240,8 @@ static BOOL autoCleanup;
                 
                 if ([regex numberOfMatchesInString:key options:0 range:NSMakeRange(0, [key length])] > 0) 
                 {
-                    return [self matchFirstResponser:map key:key_];
+                    mattingResponder = [self matchFirstResponser:map key:key_];
+                    return mattingResponder;
                 }
             }
         }

@@ -37,7 +37,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
         });
     });
     
-    context(@"when don't allowd netconncect", ^{
+    context(@"when don't allowd net conncect", ^{
         context(@"setAllowNetConnet", ^{
             afterEach(^{
                 [FakeWeb setAllowNetConnet:YES]; 
@@ -120,10 +120,28 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
     context(@"when rotating responses", ^{
         context(@"registerUri", ^{
             it(@"regsitetr 2 response", ^{
-                
+                NSArray *responses = [NSArray arrayWithObjects:
+                                      [NSDictionary dictionaryWithObjectsAndKeys:@"hoge", @"body", nil],
+                                      [NSDictionary dictionaryWithObjectsAndKeys:@"fuga", @"body", @"404", @"status", @"Not Found", @"statusMessage", nil],
+                                      nil];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" responses:responses];
+
                 ASIHTTPRequest *request;
                 request = [ASIHTTPRequest requestWithURL:url];
                 [request startSynchronous];
+                [[[request responseString] should] equal:@"hoge"];
+                [[theValue([request responseStatusCode]) should] equal:theValue(200)];
+                [[[request responseStatusMessage] should] equal:@"OK"];
+                
+                [request startSynchronous];
+                [[[request responseString] should] equal:@"fuga"];
+                [[theValue([request responseStatusCode]) should] equal:theValue(404)];
+                [[[request responseStatusMessage] should] equal:@"Not Found"];
+                
+                [request startSynchronous];
+                [[[request responseString] should] equal:@"hoge"];
+                [[theValue([request responseStatusCode]) should] equal:theValue(200)];
+                [[[request responseStatusMessage] should] equal:@"OK"];
             });
         });
     });
@@ -137,10 +155,9 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
                 request = [ASIHTTPRequest requestWithURL:url];
                 [request startSynchronous];
                 [[[request responseString] should] equal:@"Unauthorized"];
-
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"Authorized"];
                 
-                request = [ASIHTTPRequest requestWithURL:url];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"Authorized"];
+
                 [request setUsername:@"user"];
                 [request setPassword:@"pass"];
                 [request startSynchronous];

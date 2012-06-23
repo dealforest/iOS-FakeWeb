@@ -15,22 +15,10 @@
 SPEC_BEGIN(FakeWebSpec)
 
 describe(@"FakeWeb", ^{
-    context(@"When non-dependence", ^{
+    context(@"When non-regsiter", ^{
         beforeAll(^{
             [FakeWeb setAllowNetConnet:YES];
         });
-        
-        context(@"'allowNetConnet'", ^{
-            it(@"setter and getter", ^{
-                [[theValue([FakeWeb allowNetConnet]) should] beYes];
-                [[theValue([FakeWeb setAllowNetConnet:NO]) should] beFalse];
-                [[theValue([FakeWeb allowNetConnet]) should] beFalse];
-                [[theValue([FakeWeb setAllowNetConnet:YES]) should] beTrue];
-            });
-        });
-    });
-    
-    context(@"When non-regsiter", ^{
         
         afterEach(^{
             [FakeWeb cleanRegistry];
@@ -39,8 +27,17 @@ describe(@"FakeWeb", ^{
         NSString __block *url1= @"http://exsample.com/";
         NSString __block *url2 = @"http://exsample.com/hoge/fuga?test=1";
         NSString __block *url3 = @"http://exsample.com/hoge";
+
+        context(@"allowNetConnet", ^{
+            it(@"setter and getter", ^{
+                [[theValue([FakeWeb allowNetConnet]) should] beYes];
+                [[theValue([FakeWeb setAllowNetConnet:NO]) should] beFalse];
+                [[theValue([FakeWeb allowNetConnet]) should] beFalse];
+                [[theValue([FakeWeb setAllowNetConnet:YES]) should] beTrue];
+            });
+        });
         
-        context(@"'registerUri'", ^{
+        context(@"registerUri", ^{
             it(@"regsiter", ^{
                 [FakeWeb registerUri:url1 method:@"GET" body:@"hoge"];
                 [[theValue([FakeWeb registeredUri:url1]) should] beTrue];
@@ -58,7 +55,7 @@ describe(@"FakeWeb", ^{
             });
         });
         
-        context(@"'registeredPassthroughUri'", ^{
+        context(@"registeredPassthroughUri", ^{
             it(@"regsiter", ^{
                 [FakeWeb registerPassthroughUri:url1];
                 [[theValue([FakeWeb registeredPassthroughUri:url1]) should] beTrue];
@@ -83,7 +80,7 @@ describe(@"FakeWeb", ^{
             });
         });
         
-        context(@"'cleanRegistry'", ^{
+        context(@"cleanRegistry", ^{
             it(@"cleanup", ^{
                 [FakeWeb registerUri:url1 method:@"GET" body:@"hoge"];
                 [FakeWeb cleanRegistry];

@@ -20,18 +20,14 @@
     Swizzle(c, @selector(startSynchronous), @selector(overrideStartSynchronous));
     Swizzle(c, @selector(startAsynchronous), @selector(overrideStartAsynchronous));
     Swizzle(c, @selector(responseStatusCode), @selector(overrideResponseStatusCode));
+    Swizzle(c, @selector(responseStatusMessage), @selector(overrideResponseStatusMessage));
     Swizzle(c, @selector(responseString), @selector(overrideResponseString));
     Swizzle(c, @selector(responseData), @selector(overrideResponseData));
 }
 
-- (FakeWebResponder *)lookup
-{
-    return [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
-}
-
 -(void) overrideStartSynchronous
 {
-    FakeWebResponder *responder = [self lookup];
+    FakeWebResponder *responder = [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
     if (responder)
         return;
         
@@ -40,7 +36,7 @@
 
 -(void) overrideStartAsynchronous
 {
-    FakeWebResponder *responder = [self lookup];
+    FakeWebResponder *responder = [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
     if (responder)
     {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.0001), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -55,9 +51,9 @@
     }
 }
 
-- (int)overrideResponseStatusCode 
+- (NSInteger)overrideResponseStatusCode 
 {
-    FakeWebResponder *responder = [self lookup];
+    FakeWebResponder *responder = [FakeWeb mattingResponder];
     if (responder)
     {
         return [responder status];
@@ -65,9 +61,19 @@
     return [self overrideResponseStatusCode];
 }
 
+- (NSString *)overrideResponseStatusMessage
+{
+    FakeWebResponder *responder = [FakeWeb mattingResponder];
+    if (responder)
+    {
+        return [responder statusMessage];
+    }
+    return [self overrideResponseStatusMessage];
+}
+
 - (NSString *)overrideResponseString
 {
-    FakeWebResponder *responder = [self lookup];
+    FakeWebResponder *responder = [FakeWeb mattingResponder];
     if (responder)
     {
         return [responder body];

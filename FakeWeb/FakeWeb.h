@@ -12,13 +12,19 @@
 @interface FakeWeb : NSObject
 
 //--------------------------------------------------------------//
+#pragma mark -- getter --
+//--------------------------------------------------------------//
+
++(FakeWebResponder *) mattingResponder;
+
+//--------------------------------------------------------------//
 #pragma mark -- register --
 //--------------------------------------------------------------//
 
-+(void) registerUri:(NSString *)uri method:(NSString *)method rotatingBody:(NSArray *)bodies;
++(void) registerUri:(NSString *)uri method:(NSString *)method responses:(NSArray *)responses;
 
-+(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(int)status statusMessage:(NSString *)statusMessage;
-+(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(int)status;
++(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(NSInteger)status statusMessage:(NSString *)statusMessage;
++(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(NSInteger)status;
 +(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body;
 
 +(void) registerPassthroughUri:(NSString *)uri;

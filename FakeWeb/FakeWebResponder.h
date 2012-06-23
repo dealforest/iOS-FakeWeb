@@ -24,6 +24,6 @@
 @property (nonatomic) int status;
 @property (nonatomic) BOOL raiseException;
 
--(id) initWithUri:(NSString*)uri method:(NSString*)method body:(NSString *)body status:(int)status statusMessage:(NSString*)statusMessage;
+-(id) initWithUri:(NSString *)uri method:(NSString *)method body:(NSString *)body status:(NSInteger)status statusMessage:(NSString *)statusMessage;
 
 @end
