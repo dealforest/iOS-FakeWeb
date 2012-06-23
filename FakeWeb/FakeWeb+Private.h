@@ -10,6 +10,8 @@
 
 @interface FakeWeb (private)
 
++(FakeWebResponder *) machingResponder;
+
 +(FakeWebResponder *) responderFor:(NSString *)uri method:(NSString *)method;
 
 +(FakeWebResponder *) uriMapMatches:(NSMutableDictionary *)map uri:(NSString *)uri method:(NSString *)method type:(NSString *)type;

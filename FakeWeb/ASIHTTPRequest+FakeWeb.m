@@ -12,6 +12,8 @@
 #import <objc/runtime.h> 
 #import <objc/message.h>
 
+void Swizzle(Class c, SEL orig, SEL new);
+
 @implementation ASIHTTPRequest (FakeWeb)
 
 + (void)load
@@ -53,7 +55,7 @@
 
 - (NSInteger)overrideResponseStatusCode 
 {
-    FakeWebResponder *responder = [FakeWeb mattingResponder];
+    FakeWebResponder *responder = [FakeWeb machingResponder];
     if (responder)
     {
         return [responder status];
@@ -63,7 +65,7 @@
 
 - (NSString *)overrideResponseStatusMessage
 {
-    FakeWebResponder *responder = [FakeWeb mattingResponder];
+    FakeWebResponder *responder = [FakeWeb machingResponder];
     if (responder)
     {
         return [responder statusMessage];
@@ -73,7 +75,7 @@
 
 - (NSString *)overrideResponseString
 {
-    FakeWebResponder *responder = [FakeWeb mattingResponder];
+    FakeWebResponder *responder = [FakeWeb machingResponder];
     if (responder)
     {
         return [responder body];

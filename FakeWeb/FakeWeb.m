@@ -30,14 +30,6 @@ static FakeWebResponder *mattingResponder;
 }
 
 //--------------------------------------------------------------//
-#pragma mark -- getter --
-//--------------------------------------------------------------//
-
-+(FakeWebResponder *) mattingResponder {
-    return mattingResponder;
-}
-
-//--------------------------------------------------------------//
 #pragma mark -- register --
 //--------------------------------------------------------------//
 
@@ -213,6 +205,10 @@ static FakeWebResponder *mattingResponder;
 //--------------------------------------------------------------//
 #pragma mark -- private --
 //--------------------------------------------------------------//
+
++(FakeWebResponder *) machingResponder {
+    return mattingResponder;
+}
 
 +(FakeWebResponder *) uriMapMatches:(NSMutableDictionary *)map uri:(NSString *)uri method:(NSString *)method type:(NSString *)type
 {
