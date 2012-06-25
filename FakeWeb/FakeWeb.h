@@ -15,7 +15,7 @@
 #pragma mark -- register --
 //--------------------------------------------------------------//
 
-+(void) registerUri:(NSString *)uri method:(NSString *)method responses:(NSArray *)responses;
++(void) registerUri:(NSString *)uri method:(NSString *)method rotatingResponse:(NSArray *)rotatingResponses;
 
 +(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(NSInteger)status statusMessage:(NSString *)statusMessage;
 +(void) registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(NSInteger)status;

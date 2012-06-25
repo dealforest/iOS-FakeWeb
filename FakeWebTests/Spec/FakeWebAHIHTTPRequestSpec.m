@@ -117,7 +117,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
                                       [NSDictionary dictionaryWithObjectsAndKeys:@"hoge", @"body", nil],
                                       [NSDictionary dictionaryWithObjectsAndKeys:@"fuga", @"body", @"404", @"status", @"Not Found", @"statusMessage", nil],
                                       nil];
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" responses:responses];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" rotatingResponse:responses];
 
                 ASIHTTPRequest *request;
                 request = [ASIHTTPRequest requestWithURL:url];

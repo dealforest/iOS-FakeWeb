@@ -18,7 +18,11 @@
 
 +(FakeWebResponder *) uriMapMatches:(NSMutableDictionary *)map uri:(NSString *)uri method:(NSString *)method type:(NSString *)type;
 
++(FakeWebResponder *) matchingFirstResponser:(NSDictionary *)map key:(NSString *)key;
+
 +(NSArray *) convertToMethodList:(NSString *)method;
+
++(NSString *) keyForUri:(NSString *)uri method:(NSString *)method;
 
 +(NSString *) normalizeUri:(NSString *)uri;
 

@@ -7,6 +7,7 @@
 //
 
 #import "FakeWeb.h"
+#import "FakeWeb+Private.h"
 
 #define ALL_HTTP_METHOD [NSArray arrayWithObjects:@"GET", @"POST", @"PUT", @"DELETE", nil]
 
@@ -33,12 +34,12 @@ static FakeWebResponder *matchingResponder;
 #pragma mark -- register --
 //--------------------------------------------------------------//
 
-+(void) registerUri:(NSString *)uri method:(NSString *)method responses:(NSArray *)responses
++(void) registerUri:(NSString *)uri method:(NSString *)method rotatingResponse:(NSArray *)rotatingResponses
 {
     if (!method) return;
     
     NSMutableArray *responders = [NSMutableArray array];
-    for (NSDictionary *response in responses) {
+    for (NSDictionary *response in rotatingResponses) {
         NSString *body = [response objectForKey:@"body"];
         if ([body length] == 0) continue;
         
@@ -220,7 +221,7 @@ static FakeWebResponder *matchingResponder;
     
     if ([type isEqualToString:@"URI"]) 
     {
-        matchingResponder = [self matchFirstResponser:map key:key];
+        matchingResponder = [self matchingFirstResponser:map key:key];
         return matchingResponder;
     }
     else {
@@ -240,7 +241,7 @@ static FakeWebResponder *matchingResponder;
                 
                 if ([regex numberOfMatchesInString:key options:0 range:NSMakeRange(0, [key length])] > 0) 
                 {
-                    matchingResponder = [self matchFirstResponser:map key:key_];
+                    matchingResponder = [self matchingFirstResponser:map key:key_];
                     return matchingResponder;
                 }
             }
@@ -249,7 +250,7 @@ static FakeWebResponder *matchingResponder;
     return nil;
 }
 
-+(FakeWebResponder *) matchFirstResponser:(NSDictionary *)map key:(NSString *)key
++(FakeWebResponder *) matchingFirstResponser:(NSDictionary *)map key:(NSString *)key
 {
     NSMutableArray *responders = [map objectForKey:key];
     if ([responders count] == 1)
