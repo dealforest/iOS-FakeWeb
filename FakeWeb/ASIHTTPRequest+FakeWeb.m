@@ -7,12 +7,7 @@
 //
 
 #import "ASIHTTPRequest+FakeWeb.h"
-#import "FakeWeb.h"
 #import "FakeWeb+Private.h"
-#import <objc/runtime.h> 
-#import <objc/message.h>
-
-void Swizzle(Class c, SEL orig, SEL new);
 
 @implementation ASIHTTPRequest (FakeWeb)
 
@@ -84,20 +79,6 @@ void Swizzle(Class c, SEL orig, SEL new);
     return responder
         ? [[responder body] dataUsingEncoding:NSUTF8StringEncoding]
         : [self overrideResponseData];
-}
-
-/*
- * see http://stackoverflow.com/questions/1637604/method-swizzle-on-iphone-device
- */
-
-void Swizzle(Class c, SEL orig, SEL new)
-{
-    Method origMethod = class_getInstanceMethod(c, orig);
-    Method newMethod = class_getInstanceMethod(c, new);
-    if(class_addMethod(c, orig, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
-        class_replaceMethod(c, new, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
-    else
-        method_exchangeImplementations(origMethod, newMethod);
 }
 
 @end

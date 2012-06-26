@@ -35,6 +35,9 @@
 		5EBFD96D14E197750042AC70 /* FakeWebSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD96C14E197750042AC70 /* FakeWebSpec.m */; };
 		5EBFD97F14E827500042AC70 /* FakeWebResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EBFD97D14E827500042AC70 /* FakeWebResponder.h */; };
 		5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD97E14E827500042AC70 /* FakeWebResponder.m */; };
+		5EE984241598724300E500EE /* NSURLConnection+FakeWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */; };
+		5EE984251598724300E500EE /* NSURLConnection+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */; };
+		5EE984271598756000E500EE /* FakeWebNSURLConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,9 @@
 		5EBFD96C14E197750042AC70 /* FakeWebSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebSpec.m; path = Spec/FakeWebSpec.m; sourceTree = "<group>"; };
 		5EBFD97D14E827500042AC70 /* FakeWebResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeWebResponder.h; sourceTree = "<group>"; };
 		5EBFD97E14E827500042AC70 /* FakeWebResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeWebResponder.m; sourceTree = "<group>"; };
+		5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+FakeWeb.h"; sourceTree = "<group>"; };
+		5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+FakeWeb.m"; sourceTree = "<group>"; };
+		5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebNSURLConnectionSpec.m; path = Spec/FakeWebNSURLConnectionSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,8 @@
 			children = (
 				5E52692115615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h */,
 				5E52692215615F0E006AD80E /* ASIHTTPRequest+FakeWeb.m */,
+				5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */,
+				5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */,
 			);
 			name = category;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 			children = (
 				5EBFD96C14E197750042AC70 /* FakeWebSpec.m */,
 				5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */,
+				5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 				5EBFD97F14E827500042AC70 /* FakeWebResponder.h in Headers */,
 				5E76D16D1556B7F200D02664 /* FakeWeb+Private.h in Headers */,
 				5E52692315615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h in Headers */,
+				5EE984241598724300E500EE /* NSURLConnection+FakeWeb.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +453,7 @@
 			files = (
 				5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */,
 				5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */,
+				5EE984251598724300E500EE /* NSURLConnection+FakeWeb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +473,7 @@
 				5E1500FF1561618C00231102 /* ASIHTTPRequest+FakeWeb.m in Sources */,
 				5EBFD96D14E197750042AC70 /* FakeWebSpec.m in Sources */,
 				5E52692615616065006AD80E /* FakeWebAHIHTTPRequestSpec.m in Sources */,
+				5EE984271598756000E500EE /* FakeWebNSURLConnectionSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +539,7 @@
 				DSTROOT = /tmp/FakeWeb.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -539,7 +551,7 @@
 				DSTROOT = /tmp/FakeWeb.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

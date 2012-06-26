@@ -1,6 +1,6 @@
 //
 //  FakeWebAHIHTTPRequestTests.m
-//  FakeWeb
+//  FakeWebTests
 //
 //  Created by Toshirhio Morimoto on 5/15/12.
 //  Copyright (c) 2012 Toshihiro Morimoto (id:dealforest). All rights reserved.
