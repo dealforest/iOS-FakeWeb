@@ -7,6 +7,8 @@
 //
 
 #import "FakeWeb.h"
+#import <objc/runtime.h> 
+#import <objc/message.h>
 
 @interface FakeWeb (private)
 
@@ -27,5 +29,14 @@
 +(NSString *) normalizeUri:(NSString *)uri;
 
 +(NSString *) sortQuery:(NSString *)uri;
+
+/*
+ * see http://stackoverflow.com/questions/1637604/method-swizzle-on-iphone-device
+ *     http://stackoverflow.com/questions/4383567/cant-swizzle-class-methods
+ */
+
+void Swizzle(Class c, SEL orig, SEL new);
+
+void SwizzleClassMethod(Class c, SEL orig, SEL new);
 
 @end
