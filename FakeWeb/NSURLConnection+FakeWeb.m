@@ -15,6 +15,8 @@
 {
     Class c = [self class];
     SwizzleClassMethod(c, @selector(sendSynchronousRequest:returningResponse:error:), @selector(overrideSendSynchronousRequest:returningResponse:error:));
+    SwizzleClassMethod(c, @selector(sendAsynchronousRequest:queue:completionHandler:), @selector(overrideSendAsynchronousRequest:queue:completionHandler:));
+    SwizzleClassMethod(c, @selector(connectionWithRequest:delegate:), @selector(overrideConnectionWithRequest:delegate:));
 }
 
 + (NSHTTPURLResponse *)createDummyResponse:(NSURLRequest *)request responder:(FakeWebResponder *)responder
@@ -34,13 +36,29 @@
     FakeWebResponder *responder = [FakeWeb responderFor:[[request URL] absoluteString] method:[request HTTPMethod]];
     if (responder)
     {
-        if (0 != response)
+        if (response != 0)
             *response = nil;
         *response = [self createDummyResponse:request responder:responder];
         return [[responder body] dataUsingEncoding:NSUTF8StringEncoding];
     }
     
     return [self overrideSendSynchronousRequest:request returningResponse:response error:error];
+}
+
++ (NSURLConnection *)overrideConnectionWithRequest:(NSURLRequest *)request delegate:(id)delegate;
+{
+    FakeWebResponder *responder = [FakeWeb responderFor:[[request URL] absoluteString] method:[request HTTPMethod]];
+    if (responder)
+    {
+        //TODO: implemantation is subtlety.
+        NSHTTPURLResponse *response = [self createDummyResponse:request responder:responder];
+        [delegate connection:nil didReceiveResponse:response];
+        [delegate connection:nil didReceiveData:[[responder body] dataUsingEncoding:NSUTF8StringEncoding]];
+        [delegate connectionDidFinishLoading:nil];
+        return nil;
+    }
+    
+    return [self overrideConnectionWithRequest:request delegate:delegate];
 }
 
 @end

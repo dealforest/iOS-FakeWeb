@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E139258159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E139257159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m */; };
 		5E1500FF1561618C00231102 /* ASIHTTPRequest+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E52692215615F0E006AD80E /* ASIHTTPRequest+FakeWeb.m */; };
 		5E1501011561619500231102 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E1501041561619500231102 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -79,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E139256159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeWebTestNSURLConnectionViewController.h; path = mock/FakeWebTestNSURLConnectionViewController.h; sourceTree = "<group>"; };
+		5E139257159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebTestNSURLConnectionViewController.m; path = mock/FakeWebTestNSURLConnectionViewController.m; sourceTree = "<group>"; };
 		5E52692115615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASIHTTPRequest+FakeWeb.h"; sourceTree = "<group>"; };
 		5E52692215615F0E006AD80E /* ASIHTTPRequest+FakeWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASIHTTPRequest+FakeWeb.m"; sourceTree = "<group>"; };
 		5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebAHIHTTPRequestSpec.m; path = Spec/FakeWebAHIHTTPRequestSpec.m; sourceTree = "<group>"; };
@@ -157,6 +160,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E139255159A17FD00777D95 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				5E139256159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.h */,
+				5E139257159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m */,
+			);
+			name = mock;
+			sourceTree = "<group>";
+		};
 		5E52691C15615A14006AD80E /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +257,7 @@
 		5EBFD92614E192A00042AC70 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				5E139255159A17FD00777D95 /* mock */,
 				5EBFD96C14E197750042AC70 /* FakeWebSpec.m */,
 				5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */,
 				5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */,
@@ -474,6 +487,7 @@
 				5EBFD96D14E197750042AC70 /* FakeWebSpec.m in Sources */,
 				5E52692615616065006AD80E /* FakeWebAHIHTTPRequestSpec.m in Sources */,
 				5EE984271598756000E500EE /* FakeWebNSURLConnectionSpec.m in Sources */,
+				5E139258159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
