@@ -14,7 +14,6 @@
     NSString    *_body;
     NSString    *_statusMessage;
     int         _status;
-    BOOL        _raiseException;
 }
 
 @property (nonatomic, strong) NSString *uri;
@@ -22,7 +21,6 @@
 @property (nonatomic, strong) NSString *body;
 @property (nonatomic, strong) NSString *statusMessage;
 @property (nonatomic) int status;
-@property (nonatomic) BOOL raiseException;
 
 -(id) initWithUri:(NSString *)uri method:(NSString *)method body:(NSString *)body status:(NSInteger)status statusMessage:(NSString *)statusMessage;
 

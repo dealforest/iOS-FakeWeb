@@ -14,24 +14,24 @@
 + (void)load
 {
     Class c = [ASIHTTPRequest class];
-    Swizzle(c, @selector(startSynchronous), @selector(overrideStartSynchronous));
-    Swizzle(c, @selector(startAsynchronous), @selector(overrideStartAsynchronous));
-    Swizzle(c, @selector(responseStatusCode), @selector(overrideResponseStatusCode));
-    Swizzle(c, @selector(responseStatusMessage), @selector(overrideResponseStatusMessage));
-    Swizzle(c, @selector(responseString), @selector(overrideResponseString));
-    Swizzle(c, @selector(responseData), @selector(overrideResponseData));
+    Swizzle(c, @selector(startSynchronous), @selector(override_startSynchronous));
+    Swizzle(c, @selector(startAsynchronous), @selector(override_startAsynchronous));
+    Swizzle(c, @selector(responseStatusCode), @selector(override_responseStatusCode));
+    Swizzle(c, @selector(responseStatusMessage), @selector(override_responseStatusMessage));
+    Swizzle(c, @selector(responseString), @selector(override_responseString));
+    Swizzle(c, @selector(responseData), @selector(override_responseData));
 }
 
--(void) overrideStartSynchronous
+-(void) override_startSynchronous
 {
     FakeWebResponder *responder = [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
     if (responder)
         return;
         
-    [self overrideStartSynchronous];
+    [self override_startSynchronous];
 }
 
--(void) overrideStartAsynchronous
+-(void) override_startAsynchronous
 {
     FakeWebResponder __block *responder = [FakeWeb responderFor:[self.url absoluteString] method:self.requestMethod];
     [FakeWeb setMatchingResponder:nil];
@@ -45,40 +45,40 @@
     }
     else 
     {
-        [self overrideStartAsynchronous];
+        [self override_startAsynchronous];
     }
 }
 
-- (NSInteger)overrideResponseStatusCode 
+- (NSInteger)override_responseStatusCode
 {
     FakeWebResponder *responder = [FakeWeb matchingResponder];
     return responder
         ? [responder status]
-        : [self overrideResponseStatusCode];
+        : [self override_responseStatusCode];
 }
 
-- (NSString *)overrideResponseStatusMessage
+- (NSString *)override_responseStatusMessage
 {
     FakeWebResponder *responder = [FakeWeb matchingResponder];
     return responder
         ? [responder statusMessage]
-        : [self responseStatusMessage];
+        : [self override_responseStatusMessage];
 }
 
-- (NSString *)overrideResponseString
+- (NSString *)override_responseString
 {
     FakeWebResponder *responder = [FakeWeb matchingResponder];
     return responder
         ? [responder body]
-        : [self overrideResponseString];
+        : [self override_responseString];
 }
 
-- (NSData *) overrideResponseData 
+- (NSData *) override_responseData
 {
     FakeWebResponder *responder = [FakeWeb matchingResponder];
     return responder
         ? [[responder body] dataUsingEncoding:NSUTF8StringEncoding]
-        : [self overrideResponseData];
+        : [self override_responseData];
 }
 
 @end

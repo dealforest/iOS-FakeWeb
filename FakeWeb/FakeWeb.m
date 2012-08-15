@@ -30,9 +30,8 @@ static FakeWebResponder *matchingResponder;
     matchingResponder = nil;
 }
 
-//--------------------------------------------------------------//
-#pragma mark -- register --
-//--------------------------------------------------------------//
+#pragma mark -
+#pragma mark register method
 
 +(void) registerUri:(NSString *)uri method:(NSString *)method rotatingResponse:(NSArray *)rotatingResponses
 {
@@ -111,9 +110,8 @@ static FakeWebResponder *matchingResponder;
     }
 }
 
-//--------------------------------------------------------------//
-#pragma mark -- check --
-//--------------------------------------------------------------//
+#pragma mark -
+#pragma mark check method
 
 + (BOOL)registeredUri:(NSString*)uri 
 {
@@ -149,9 +147,8 @@ static FakeWebResponder *matchingResponder;
     return FALSE;
 }
 
-//--------------------------------------------------------------//
-#pragma mark -- thorow exception --
-//--------------------------------------------------------------//
+#pragma mark -
+#pragma mark throw exception method
 
 + (void)raiseNetConnectException:(NSString *)uri method:(NSString*)method
 {
@@ -160,9 +157,8 @@ static FakeWebResponder *matchingResponder;
                                  userInfo:nil];
 }
 
-//--------------------------------------------------------------//
-#pragma mark -- settings --
-//--------------------------------------------------------------//
+#pragma mark -
+#pragma mark option method
 
 + (BOOL)allowNetConnet
 {
@@ -203,9 +199,8 @@ static FakeWebResponder *matchingResponder;
     return responder;
 }
 
-//--------------------------------------------------------------//
-#pragma mark -- private --
-//--------------------------------------------------------------//
+#pragma mark -
+#pragma mark private method
 
 +(FakeWebResponder *) matchingResponder {
     return matchingResponder;

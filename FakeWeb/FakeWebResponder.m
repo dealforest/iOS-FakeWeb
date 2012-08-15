@@ -10,7 +10,7 @@
 
 @implementation FakeWebResponder
 
-@synthesize uri = _uri, method = _method, body = _body, status = _status,  statusMessage = _statusMessage, raiseException = _raiseException;
+@synthesize uri = _uri, method = _method, body = _body, status = _status,  statusMessage = _statusMessage;
 
 -(id) initWithUri:(NSString *)uri method:(NSString *)method body:(NSString *)body status:(NSInteger)status statusMessage:(NSString *)statusMessage {
     self = [super init];
@@ -20,7 +20,6 @@
         _body = body;
         _status = status;
         _statusMessage = statusMessage;
-        _raiseException = FALSE;
         
         if (!_status)
             _status = 200;
