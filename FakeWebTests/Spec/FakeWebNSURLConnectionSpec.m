@@ -63,7 +63,7 @@ describe(@"NSURLConnection+FakeWeb", ^{
     
     context(@"when asynchronous request", ^{
         context(@"registerUri", ^{
-            it(@"request method is GET", ^{
+            it(@"request by connectionWithRequest:delegate: (GET)", ^{
                 [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" staus:200];
                 
                 FakeWebTestNSURLConnectionViewController *controller = [[FakeWebTestNSURLConnectionViewController alloc] init];

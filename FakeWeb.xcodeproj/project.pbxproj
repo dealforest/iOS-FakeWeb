@@ -17,7 +17,6 @@
 		5E15010C1561619500231102 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E1501101561619500231102 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD94314E1957A0042AC70 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E1501121561619500231102 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E15011C1561625100231102 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD96A14E196F10042AC70 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E52692315615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E52692115615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h */; };
 		5E52692615616065006AD80E /* FakeWebAHIHTTPRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */; };
 		5E76D16D1556B7F200D02664 /* FakeWeb+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E76D16C1556B7F200D02664 /* FakeWeb+Private.h */; };
@@ -37,8 +36,9 @@
 		5EBFD97F14E827500042AC70 /* FakeWebResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EBFD97D14E827500042AC70 /* FakeWebResponder.h */; };
 		5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD97E14E827500042AC70 /* FakeWebResponder.m */; };
 		5EE984241598724300E500EE /* NSURLConnection+FakeWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */; };
-		5EE984251598724300E500EE /* NSURLConnection+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */; };
-		5EE984271598756000E500EE /* FakeWebNSURLConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */; };
+		980E36A515DBAA8A00B036FC /* NSURLConnection+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */; };
+		980E36A615DBAA9200B036FC /* FakeWebNSURLConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */; };
+		980E36A915DBAAD900B036FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E36A815DBAAD900B036FC /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,14 +121,14 @@
 		5EBFD94614E1957A0042AC70 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "externals/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
 		5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = externals/Kiwi/Kiwi.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5EBFD96514E196850042AC70 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		5EBFD96914E196F10042AC70 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		5EBFD96A14E196F10042AC70 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		5EBFD96C14E197750042AC70 /* FakeWebSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebSpec.m; path = Spec/FakeWebSpec.m; sourceTree = "<group>"; };
 		5EBFD97D14E827500042AC70 /* FakeWebResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeWebResponder.h; sourceTree = "<group>"; };
 		5EBFD97E14E827500042AC70 /* FakeWebResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeWebResponder.m; sourceTree = "<group>"; };
 		5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+FakeWeb.h"; sourceTree = "<group>"; };
 		5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+FakeWeb.m"; sourceTree = "<group>"; };
 		5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebNSURLConnectionSpec.m; path = Spec/FakeWebNSURLConnectionSpec.m; sourceTree = "<group>"; };
+		980E36A715DBAAD900B036FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		980E36A815DBAAD900B036FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				5EBFD92714E192A80042AC70 /* Library */,
+				5E139255159A17FD00777D95 /* mock */,
 				5EBFD92614E192A00042AC70 /* Spec */,
 				5EBFD91614E192450042AC70 /* Supporting Files */,
 			);
@@ -257,7 +258,6 @@
 		5EBFD92614E192A00042AC70 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
-				5E139255159A17FD00777D95 /* mock */,
 				5EBFD96C14E197750042AC70 /* FakeWebSpec.m */,
 				5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */,
 				5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */,
@@ -315,8 +315,8 @@
 		5EBFD96814E196F10042AC70 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				5EBFD96914E196F10042AC70 /* Reachability.h */,
-				5EBFD96A14E196F10042AC70 /* Reachability.m */,
+				980E36A715DBAAD900B036FC /* Reachability.h */,
+				980E36A815DBAAD900B036FC /* Reachability.m */,
 			);
 			name = Reachability;
 			path = "externals/asi-http-request/External/Reachability";
@@ -466,7 +466,7 @@
 			files = (
 				5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */,
 				5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */,
-				5EE984251598724300E500EE /* NSURLConnection+FakeWeb.m in Sources */,
+				980E36A515DBAA8A00B036FC /* NSURLConnection+FakeWeb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,12 +482,12 @@
 				5E15010C1561619500231102 /* ASIHTTPRequest.m in Sources */,
 				5E1501101561619500231102 /* ASIInputStream.m in Sources */,
 				5E1501121561619500231102 /* ASINetworkQueue.m in Sources */,
-				5E15011C1561625100231102 /* Reachability.m in Sources */,
 				5E1500FF1561618C00231102 /* ASIHTTPRequest+FakeWeb.m in Sources */,
 				5EBFD96D14E197750042AC70 /* FakeWebSpec.m in Sources */,
 				5E52692615616065006AD80E /* FakeWebAHIHTTPRequestSpec.m in Sources */,
-				5EE984271598756000E500EE /* FakeWebNSURLConnectionSpec.m in Sources */,
 				5E139258159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m in Sources */,
+				980E36A615DBAA9200B036FC /* FakeWebNSURLConnectionSpec.m in Sources */,
+				980E36A915DBAAD900B036FC /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,16 +15,17 @@
 -(id) initWithUri:(NSString *)uri method:(NSString *)method body:(NSString *)body status:(NSInteger)status statusMessage:(NSString *)statusMessage {
     self = [super init];
     if (self) {
-        if (!status)
-            status = 200;
-        if (!statusMessage)
-            statusMessage = @"OK";
         _uri = uri;
         _method = method;
         _body = body;
         _status = status;
         _statusMessage = statusMessage;
         _raiseException = FALSE;
+        
+        if (!_status)
+            _status = 200;
+        if (!_statusMessage)
+            _statusMessage = @"OK";
     }
     return self;
 }

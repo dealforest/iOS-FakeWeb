@@ -10,11 +10,11 @@
 
 @interface FakeWebTestNSURLConnectionViewController : UIViewController <NSURLConnectionDelegate>
 {
-    NSURLConnection *connection_;
-    NSMutableData   *data_;
-    NSError         *error_;
-    NSURLResponse   *response_;
-    BOOL            isSuccess_;
+    NSURLConnection *_connection;
+    NSMutableData   *_data;
+    NSError         *_error;
+    NSURLResponse   *_response;
+    BOOL            _isSuccess;
 }
 
 @property (nonatomic, strong) NSURLConnection *connection;

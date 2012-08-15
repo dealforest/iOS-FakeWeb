@@ -10,50 +10,50 @@
 
 @implementation FakeWebTestNSURLConnectionViewController
 
-@synthesize connection = connection_, data = data_, error = error_, response = response_, isSuccess = isSuccess_;
+@synthesize connection = _connection, data = _data, error = _error, response = _response, isSuccess = _isSuccess;
 
 - (id)init
 {
     self = [super init];
     if (self)
     {
-        connection_ = nil, error_ = nil, response_ = nil;
-        data_ = [NSMutableData data];
-        isSuccess_ = NO;
+        _connection = nil, _error = nil, _response = nil;
+        _data = [NSMutableData data];
+        _isSuccess = NO;
     }
     return self;
 }
 
 -(NSString *) getResponseString
 {
-    return [[NSString alloc] initWithData:data_ encoding:NSUTF8StringEncoding];
+    return [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding];
 }
 
 - (void) asyncRequest:(NSURLRequest *)request
 {
-    connection_ = [NSURLConnection connectionWithRequest:request delegate:self];
+    _connection = [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    [data_ setLength:0];
-    response_ = response;
-    isSuccess_ = FALSE;
+    [_data setLength:0];
+    _response = response;
+    _isSuccess = FALSE;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    [data_ appendData:data];
+    [_data appendData:data];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    error_ = error;
+    _error = error;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    isSuccess_ = YES;
+    _isSuccess = YES;
 }
 
 @end
