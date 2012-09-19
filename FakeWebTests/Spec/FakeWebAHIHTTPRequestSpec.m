@@ -27,7 +27,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
     context(@"when empty registered uri", ^{
         context(@"registerUri", ^{
             it(@"normal process", ^{
-                [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" staus:200];
+                [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" status:200];
                 
                 ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
                 [request startSynchronous];
@@ -46,7 +46,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
             it(@"process is allowed net connect", ^{
                 [FakeWeb setAllowNetConnet:YES];
                 
-                [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" staus:200];
+                [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" status:200];
                 
                 ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
                 [request startSynchronous];
@@ -65,7 +65,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
             
             it(@"process is not allowed net connect already regsiter", ^{
                 [FakeWeb setAllowNetConnet:NO];
-                [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" staus:200];
+                [FakeWeb registerUri:@"http://exsample.com" method:@"GET" body:@"hoge" status:200];
                 
                 [[theBlock(^{ 
                     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -78,7 +78,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
     context(@"when adding a custom status to the response", ^{
         context(@"registerUri", ^{
             it(@"regsitetr 404 response", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"Nothing to be found 'round here" staus:404 statusMessage:@"Not Found"];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"Nothing to be found 'round here" status:404 statusMessage:@"Not Found"];
                 
                 ASIHTTPRequest *request;
                 request = [ASIHTTPRequest requestWithURL:url];
@@ -92,7 +92,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
     context(@"when responding to any HTTP method", ^{
         context(@"registerUri", ^{
             it(@"request method is GET and POST", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"ANY" body:@"Nothing to be found 'round here" staus:404 statusMessage:@"Not Found"];
+                [FakeWeb registerUri:[url absoluteString] method:@"ANY" body:@"Nothing to be found 'round here" status:404 statusMessage:@"Not Found"];
                 
                 ASIHTTPRequest *request;
                 request = [ASIHTTPRequest requestWithURL:url];
@@ -142,7 +142,7 @@ describe(@"ASIHTTPRequest+FakeWeb", ^{
     context(@"when need authorization request", ^{
         context(@"registerUri", ^{
             it(@"input valid parameter", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"Unauthorized" staus:401 statusMessage:@"Unauthorized"];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"Unauthorized" status:401 statusMessage:@"Unauthorized"];
                 
                 ASIHTTPRequest *request;
                 request = [ASIHTTPRequest requestWithURL:url];

@@ -27,7 +27,7 @@ describe(@"NSURLConnection+FakeWeb", ^{
     context(@"when empty registered uri", ^{
         context(@"registerUri", ^{
             it(@"synchronous request by GET", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" staus:200];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" status:200];
 
                 NSURLRequest *request = [NSURLRequest requestWithURL:url];
                 NSHTTPURLResponse *response = nil;
@@ -44,7 +44,7 @@ describe(@"NSURLConnection+FakeWeb", ^{
             });
             
             it(@"synchronous request by POST", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"POST" body:@"fuga" staus:200];
+                [FakeWeb registerUri:[url absoluteString] method:@"POST" body:@"fuga" status:200];
                 
                 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
                 [request setHTTPMethod:@"POST"];
@@ -64,7 +64,7 @@ describe(@"NSURLConnection+FakeWeb", ^{
     context(@"when asynchronous request", ^{
         context(@"registerUri", ^{
             it(@"request by connectionWithRequest:delegate: (GET)", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" staus:200];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" status:200];
                 
                 FakeWebTestNSURLConnectionViewController *controller = [[FakeWebTestNSURLConnectionViewController alloc] init];
                 NSURLRequest *request = [NSURLRequest requestWithURL:url
@@ -75,7 +75,7 @@ describe(@"NSURLConnection+FakeWeb", ^{
             });
             
             it(@"request by sendAsynchronousRequest:queue:completionHandler: (GET)", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" staus:200];
+                [FakeWeb registerUri:[url absoluteString] method:@"GET" body:@"hoge" status:200];
                 
                 NSOperationQueue *queue = [[NSOperationQueue alloc] init];
                 NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -104,7 +104,7 @@ describe(@"NSURLConnection+FakeWeb", ^{
             });
             
             it(@"request by sendAsynchronousRequest:queue:completionHandler: (POST)", ^{
-                [FakeWeb registerUri:[url absoluteString] method:@"POST" body:@"hoge" staus:200];
+                [FakeWeb registerUri:[url absoluteString] method:@"POST" body:@"hoge" status:200];
                 
                 NSOperationQueue *queue = [[NSOperationQueue alloc] init];
                 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

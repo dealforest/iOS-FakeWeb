@@ -63,17 +63,17 @@ static FakeWebResponder *matchingResponder;
     }
 }
 
-+ (void)registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body staus:(NSInteger)status
++ (void)registerUri:(NSString *)uri method:(NSString *)method body:(NSString *)body status:(NSInteger)status
 {
-    [self registerUri:uri method:method body:body staus:status statusMessage:nil];
+    [self registerUri:uri method:method body:body status:status statusMessage:nil];
 }
 
 + (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body 
 {
-    [self registerUri:uri method:method body:body staus:200 statusMessage:nil];
+    [self registerUri:uri method:method body:body status:200 statusMessage:nil];
 }
 
-+ (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body staus:(NSInteger)status statusMessage:(NSString*)statusMessage 
++ (void)registerUri:(NSString*)uri method:(NSString*)method body:(NSString*)body status:(NSInteger)status statusMessage:(NSString*)statusMessage
 {
     if (!method) return;
     
