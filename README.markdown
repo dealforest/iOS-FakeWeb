@@ -1,4 +1,3 @@
-
 # FakeWeb
 Simple HTTP request mocking/interception for testing module.
 
@@ -43,7 +42,8 @@ simple case:
 #import "ASIHTTPRequest+FakeWeb.h"
 [FakeWeb registerUri:@"http://google.com" method:@"GET" body:@"hoge" staus:200];
 ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]];
-NSLog("%@", [request responseString]);
+[request startSynchronous];
+NSLog(@"%@", [request responseString]);
 // => hoge
 ```
 Other uses will see the test case:
