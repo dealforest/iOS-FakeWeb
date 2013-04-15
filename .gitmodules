@@ -1,6 +1,0 @@
-[submodule "externals/Kiwi"]
-	path = externals/Kiwi
-	url = git://github.com/allending/Kiwi.git
-[submodule "externals/asi-http-request"]
-	path = externals/asi-http-request
-	url = git://github.com/pokeb/asi-http-request.git

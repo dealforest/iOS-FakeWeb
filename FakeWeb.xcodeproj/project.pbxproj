@@ -8,37 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		5E139258159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E139257159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m */; };
-		5E1500FF1561618C00231102 /* ASIHTTPRequest+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E52692215615F0E006AD80E /* ASIHTTPRequest+FakeWeb.m */; };
-		5E1501011561619500231102 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E1501041561619500231102 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E1501061561619500231102 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93914E1957A0042AC70 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E1501081561619500231102 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93B14E1957A0042AC70 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E15010A1561619500231102 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93D14E1957A0042AC70 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E15010C1561619500231102 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E1501101561619500231102 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD94314E1957A0042AC70 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5E1501121561619500231102 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E52692315615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E52692115615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h */; };
-		5E52692615616065006AD80E /* FakeWebAHIHTTPRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */; };
 		5E76D16D1556B7F200D02664 /* FakeWeb+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E76D16C1556B7F200D02664 /* FakeWeb+Private.h */; };
 		5EBFD90014E192450042AC70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FF14E192450042AC70 /* Foundation.framework */; };
 		5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD90514E192450042AC70 /* FakeWeb.m */; };
 		5EBFD90E14E192450042AC70 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD90D14E192450042AC70 /* SenTestingKit.framework */; };
 		5EBFD91114E192450042AC70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FF14E192450042AC70 /* Foundation.framework */; };
 		5EBFD91414E192450042AC70 /* libFakeWeb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD8FC14E192450042AC70 /* libFakeWeb.a */; };
-		5EBFD92914E195140042AC70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92814E195140042AC70 /* UIKit.framework */; };
-		5EBFD92B14E1951D0042AC70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92A14E1951D0042AC70 /* CoreGraphics.framework */; };
-		5EBFD92D14E195260042AC70 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92C14E195260042AC70 /* CFNetwork.framework */; };
-		5EBFD92F14E1952E0042AC70 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD92E14E1952E0042AC70 /* libz.dylib */; };
-		5EBFD93114E195380042AC70 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD93014E195380042AC70 /* SystemConfiguration.framework */; };
-		5EBFD96414E196020042AC70 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD95D14E195EF0042AC70 /* libKiwi.a */; };
-		5EBFD96614E196850042AC70 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBFD96514E196850042AC70 /* MobileCoreServices.framework */; };
 		5EBFD96D14E197750042AC70 /* FakeWebSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD96C14E197750042AC70 /* FakeWebSpec.m */; };
 		5EBFD97F14E827500042AC70 /* FakeWebResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EBFD97D14E827500042AC70 /* FakeWebResponder.h */; };
 		5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBFD97E14E827500042AC70 /* FakeWebResponder.m */; };
 		5EE984241598724300E500EE /* NSURLConnection+FakeWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */; };
+		5F42B1725AC241E0A73F06AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFD949143CF4101A847C783 /* libPods.a */; };
 		980E36A515DBAA8A00B036FC /* NSURLConnection+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */; };
 		980E36A615DBAA9200B036FC /* FakeWebNSURLConnectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */; };
-		980E36A915DBAAD900B036FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 980E36A815DBAAD900B036FC /* Reachability.m */; };
+		985600FD171BF74500D059B5 /* FakeWebAHIHTTPRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E52692515616065006AD80E /* FakeWebAHIHTTPRequestSpec.m */; };
+		985600FE171BF9CB00D059B5 /* ASIHTTPRequest+FakeWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E52692215615F0E006AD80E /* ASIHTTPRequest+FakeWeb.m */; };
+		98F1BCCA171C3A9300E5DA87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F1BCC9171C3A9300E5DA87 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,37 +35,10 @@
 			remoteGlobalIDString = 5EBFD8FB14E192450042AC70;
 			remoteInfo = FakeWeb;
 		};
-		5EBFD95C14E195EF0042AC70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5015B9F11583A77002E9A98;
-			remoteInfo = Kiwi;
-		};
-		5EBFD95E14E195EF0042AC70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5015C9E11584017002E9A98;
-			remoteInfo = KiwiTests;
-		};
-		5EBFD96014E195EF0042AC70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A3B16542139967B800E9CC6E;
-			remoteInfo = KiwiExamples;
-		};
-		5EBFD96214E195F90042AC70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F5015B9E11583A77002E9A98;
-			remoteInfo = Kiwi;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E5EFA7BA5394DEF89D1286D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5E139256159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeWebTestNSURLConnectionViewController.h; path = mock/FakeWebTestNSURLConnectionViewController.h; sourceTree = "<group>"; };
 		5E139257159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebTestNSURLConnectionViewController.m; path = mock/FakeWebTestNSURLConnectionViewController.m; sourceTree = "<group>"; };
 		5E52692115615F0E006AD80E /* ASIHTTPRequest+FakeWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASIHTTPRequest+FakeWeb.h"; sourceTree = "<group>"; };
@@ -94,41 +53,14 @@
 		5EBFD90C14E192450042AC70 /* FakeWebTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeWebTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBFD90D14E192450042AC70 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5EBFD91714E192450042AC70 /* FakeWebTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FakeWebTests-Info.plist"; sourceTree = "<group>"; };
-		5EBFD92814E195140042AC70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5EBFD92A14E1951D0042AC70 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5EBFD92C14E195260042AC70 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		5EBFD92E14E1952E0042AC70 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		5EBFD93014E195380042AC70 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5EBFD93314E1957A0042AC70 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = "externals/asi-http-request/Classes/ASIAuthenticationDialog.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = "externals/asi-http-request/Classes/ASIAuthenticationDialog.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD93514E1957A0042AC70 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "externals/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93614E1957A0042AC70 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = "externals/asi-http-request/Classes/ASIDataCompressor.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = "externals/asi-http-request/Classes/ASIDataCompressor.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD93814E1957A0042AC70 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataDecompressor.h; path = "externals/asi-http-request/Classes/ASIDataDecompressor.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93914E1957A0042AC70 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataDecompressor.m; path = "externals/asi-http-request/Classes/ASIDataDecompressor.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD93A14E1957A0042AC70 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDownloadCache.h; path = "externals/asi-http-request/Classes/ASIDownloadCache.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93B14E1957A0042AC70 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDownloadCache.m; path = "externals/asi-http-request/Classes/ASIDownloadCache.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD93C14E1957A0042AC70 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIFormDataRequest.h; path = "externals/asi-http-request/Classes/ASIFormDataRequest.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93D14E1957A0042AC70 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIFormDataRequest.m; path = "externals/asi-http-request/Classes/ASIFormDataRequest.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD93E14E1957A0042AC70 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequest.h; path = "externals/asi-http-request/Classes/ASIHTTPRequest.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = "externals/asi-http-request/Classes/ASIHTTPRequest.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD94014E1957A0042AC70 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestConfig.h; path = "externals/asi-http-request/Classes/ASIHTTPRequestConfig.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD94114E1957A0042AC70 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestDelegate.h; path = "externals/asi-http-request/Classes/ASIHTTPRequestDelegate.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD94214E1957A0042AC70 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIInputStream.h; path = "externals/asi-http-request/Classes/ASIInputStream.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD94314E1957A0042AC70 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = "externals/asi-http-request/Classes/ASIInputStream.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD94414E1957A0042AC70 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "externals/asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "externals/asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
-		5EBFD94614E1957A0042AC70 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "externals/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
-		5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = externals/Kiwi/Kiwi.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5EBFD96514E196850042AC70 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5EBFD96C14E197750042AC70 /* FakeWebSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebSpec.m; path = Spec/FakeWebSpec.m; sourceTree = "<group>"; };
 		5EBFD97D14E827500042AC70 /* FakeWebResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeWebResponder.h; sourceTree = "<group>"; };
 		5EBFD97E14E827500042AC70 /* FakeWebResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeWebResponder.m; sourceTree = "<group>"; };
 		5EE984221598724300E500EE /* NSURLConnection+FakeWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+FakeWeb.h"; sourceTree = "<group>"; };
 		5EE984231598724300E500EE /* NSURLConnection+FakeWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+FakeWeb.m"; sourceTree = "<group>"; };
 		5EE984261598756000E500EE /* FakeWebNSURLConnectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeWebNSURLConnectionSpec.m; path = Spec/FakeWebNSURLConnectionSpec.m; sourceTree = "<group>"; };
-		980E36A715DBAAD900B036FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		980E36A815DBAAD900B036FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6AFD949143CF4101A847C783 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F1BCC9171C3A9300E5DA87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBFD90014E192450042AC70 /* Foundation.framework in Frameworks */,
+				5F42B1725AC241E0A73F06AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,15 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EBFD92F14E1952E0042AC70 /* libz.dylib in Frameworks */,
-				5EBFD96614E196850042AC70 /* MobileCoreServices.framework in Frameworks */,
-				5EBFD93114E195380042AC70 /* SystemConfiguration.framework in Frameworks */,
-				5EBFD92D14E195260042AC70 /* CFNetwork.framework in Frameworks */,
-				5EBFD92B14E1951D0042AC70 /* CoreGraphics.framework in Frameworks */,
-				5EBFD92914E195140042AC70 /* UIKit.framework in Frameworks */,
+				98F1BCCA171C3A9300E5DA87 /* UIKit.framework in Frameworks */,
 				5EBFD90E14E192450042AC70 /* SenTestingKit.framework in Frameworks */,
 				5EBFD91114E192450042AC70 /* Foundation.framework in Frameworks */,
-				5EBFD96414E196020042AC70 /* libKiwi.a in Frameworks */,
 				5EBFD91414E192450042AC70 /* libFakeWeb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +114,7 @@
 				5EBFD91514E192450042AC70 /* FakeWebTests */,
 				5EBFD8FE14E192450042AC70 /* Frameworks */,
 				5EBFD8FD14E192450042AC70 /* Products */,
+				3E5EFA7BA5394DEF89D1286D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,14 +130,10 @@
 		5EBFD8FE14E192450042AC70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EBFD92E14E1952E0042AC70 /* libz.dylib */,
-				5EBFD96514E196850042AC70 /* MobileCoreServices.framework */,
-				5EBFD93014E195380042AC70 /* SystemConfiguration.framework */,
-				5EBFD92C14E195260042AC70 /* CFNetwork.framework */,
-				5EBFD92A14E1951D0042AC70 /* CoreGraphics.framework */,
-				5EBFD92814E195140042AC70 /* UIKit.framework */,
+				98F1BCC9171C3A9300E5DA87 /* UIKit.framework */,
 				5EBFD8FF14E192450042AC70 /* Foundation.framework */,
 				5EBFD90D14E192450042AC70 /* SenTestingKit.framework */,
+				6AFD949143CF4101A847C783 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,7 +163,6 @@
 		5EBFD91514E192450042AC70 /* FakeWebTests */ = {
 			isa = PBXGroup;
 			children = (
-				5EBFD92714E192A80042AC70 /* Library */,
 				5E139255159A17FD00777D95 /* mock */,
 				5EBFD92614E192A00042AC70 /* Spec */,
 				5EBFD91614E192450042AC70 /* Supporting Files */,
@@ -265,63 +188,6 @@
 			name = Spec;
 			sourceTree = "<group>";
 		};
-		5EBFD92714E192A80042AC70 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				5EBFD93214E195650042AC70 /* ASIHTTPRequest */,
-				5EBFD96814E196F10042AC70 /* Reachability */,
-				5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */,
-			);
-			name = Library;
-			sourceTree = "<group>";
-		};
-		5EBFD93214E195650042AC70 /* ASIHTTPRequest */ = {
-			isa = PBXGroup;
-			children = (
-				5EBFD93314E1957A0042AC70 /* ASIAuthenticationDialog.h */,
-				5EBFD93414E1957A0042AC70 /* ASIAuthenticationDialog.m */,
-				5EBFD93514E1957A0042AC70 /* ASICacheDelegate.h */,
-				5EBFD93614E1957A0042AC70 /* ASIDataCompressor.h */,
-				5EBFD93714E1957A0042AC70 /* ASIDataCompressor.m */,
-				5EBFD93814E1957A0042AC70 /* ASIDataDecompressor.h */,
-				5EBFD93914E1957A0042AC70 /* ASIDataDecompressor.m */,
-				5EBFD93A14E1957A0042AC70 /* ASIDownloadCache.h */,
-				5EBFD93B14E1957A0042AC70 /* ASIDownloadCache.m */,
-				5EBFD93C14E1957A0042AC70 /* ASIFormDataRequest.h */,
-				5EBFD93D14E1957A0042AC70 /* ASIFormDataRequest.m */,
-				5EBFD93E14E1957A0042AC70 /* ASIHTTPRequest.h */,
-				5EBFD93F14E1957A0042AC70 /* ASIHTTPRequest.m */,
-				5EBFD94014E1957A0042AC70 /* ASIHTTPRequestConfig.h */,
-				5EBFD94114E1957A0042AC70 /* ASIHTTPRequestDelegate.h */,
-				5EBFD94214E1957A0042AC70 /* ASIInputStream.h */,
-				5EBFD94314E1957A0042AC70 /* ASIInputStream.m */,
-				5EBFD94414E1957A0042AC70 /* ASINetworkQueue.h */,
-				5EBFD94514E1957A0042AC70 /* ASINetworkQueue.m */,
-				5EBFD94614E1957A0042AC70 /* ASIProgressDelegate.h */,
-			);
-			name = ASIHTTPRequest;
-			sourceTree = "<group>";
-		};
-		5EBFD95414E195EF0042AC70 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5EBFD95D14E195EF0042AC70 /* libKiwi.a */,
-				5EBFD95F14E195EF0042AC70 /* KiwiTests.octest */,
-				5EBFD96114E195EF0042AC70 /* KiwiExamples.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5EBFD96814E196F10042AC70 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				980E36A715DBAAD900B036FC /* Reachability.h */,
-				980E36A815DBAAD900B036FC /* Reachability.m */,
-			);
-			name = Reachability;
-			path = "externals/asi-http-request/External/Reachability";
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -346,6 +212,7 @@
 				5EBFD8F814E192450042AC70 /* Sources */,
 				5EBFD8F914E192450042AC70 /* Frameworks */,
 				5EBFD8FA14E192450042AC70 /* Headers */,
+				30CC0CA328C64D14AC503839 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,11 +231,11 @@
 				5EBFD90814E192450042AC70 /* Frameworks */,
 				5EBFD90914E192450042AC70 /* Resources */,
 				5EBFD90A14E192450042AC70 /* ShellScript */,
+				05F775634A8C42B68D96B246 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5EBFD96314E195F90042AC70 /* PBXTargetDependency */,
 				5EBFD91314E192450042AC70 /* PBXTargetDependency */,
 			);
 			name = FakeWebTests;
@@ -395,12 +262,6 @@
 			mainGroup = 5EBFD8F114E192450042AC70;
 			productRefGroup = 5EBFD8FD14E192450042AC70 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 5EBFD95414E195EF0042AC70 /* Products */;
-					ProjectRef = 5EBFD95314E195EF0042AC70 /* Kiwi.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				5EBFD8FB14E192450042AC70 /* FakeWeb */,
@@ -408,30 +269,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		5EBFD95D14E195EF0042AC70 /* libKiwi.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libKiwi.a;
-			remoteRef = 5EBFD95C14E195EF0042AC70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5EBFD95F14E195EF0042AC70 /* KiwiTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KiwiTests.octest;
-			remoteRef = 5EBFD95E14E195EF0042AC70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5EBFD96114E195EF0042AC70 /* KiwiExamples.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KiwiExamples.octest;
-			remoteRef = 5EBFD96014E195EF0042AC70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5EBFD90914E192450042AC70 /* Resources */ = {
@@ -444,6 +281,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05F775634A8C42B68D96B246 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		30CC0CA328C64D14AC503839 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		5EBFD90A14E192450042AC70 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +332,7 @@
 				5EBFD90614E192450042AC70 /* FakeWeb.m in Sources */,
 				5EBFD98014E827500042AC70 /* FakeWebResponder.m in Sources */,
 				980E36A515DBAA8A00B036FC /* NSURLConnection+FakeWeb.m in Sources */,
+				985600FE171BF9CB00D059B5 /* ASIHTTPRequest+FakeWeb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,20 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E1501011561619500231102 /* ASIAuthenticationDialog.m in Sources */,
-				5E1501041561619500231102 /* ASIDataCompressor.m in Sources */,
-				5E1501061561619500231102 /* ASIDataDecompressor.m in Sources */,
-				5E1501081561619500231102 /* ASIDownloadCache.m in Sources */,
-				5E15010A1561619500231102 /* ASIFormDataRequest.m in Sources */,
-				5E15010C1561619500231102 /* ASIHTTPRequest.m in Sources */,
-				5E1501101561619500231102 /* ASIInputStream.m in Sources */,
-				5E1501121561619500231102 /* ASINetworkQueue.m in Sources */,
-				5E1500FF1561618C00231102 /* ASIHTTPRequest+FakeWeb.m in Sources */,
 				5EBFD96D14E197750042AC70 /* FakeWebSpec.m in Sources */,
-				5E52692615616065006AD80E /* FakeWebAHIHTTPRequestSpec.m in Sources */,
+				985600FD171BF74500D059B5 /* FakeWebAHIHTTPRequestSpec.m in Sources */,
 				5E139258159A184A00777D95 /* FakeWebTestNSURLConnectionViewController.m in Sources */,
 				980E36A615DBAA9200B036FC /* FakeWebNSURLConnectionSpec.m in Sources */,
-				980E36A915DBAAD900B036FC /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,11 +354,6 @@
 			isa = PBXTargetDependency;
 			target = 5EBFD8FB14E192450042AC70 /* FakeWeb */;
 			targetProxy = 5EBFD91214E192450042AC70 /* PBXContainerItemProxy */;
-		};
-		5EBFD96314E195F90042AC70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Kiwi;
-			targetProxy = 5EBFD96214E195F90042AC70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -549,11 +400,13 @@
 		};
 		5EBFD92114E192450042AC70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5EFA7BA5394DEF89D1286D /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/FakeWeb.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
-				OTHER_LDFLAGS = "-all_load";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -561,11 +414,13 @@
 		};
 		5EBFD92214E192450042AC70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5EFA7BA5394DEF89D1286D /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/FakeWeb.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
-				OTHER_LDFLAGS = "-all_load";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -573,16 +428,19 @@
 		};
 		5EBFD92414E192450042AC70 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5EFA7BA5394DEF89D1286D /* Pods.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
-				HEADER_SEARCH_PATHS = externals/KiWi/KiWi;
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "FakeWebTests/FakeWebTests-Info.plist";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -590,16 +448,20 @@
 		};
 		5EBFD92514E192450042AC70 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5EFA7BA5394DEF89D1286D /* Pods.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FakeWeb/FakeWeb-Prefix.pch";
-				HEADER_SEARCH_PATHS = externals/KiWi/KiWi;
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "FakeWebTests/FakeWebTests-Info.plist";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

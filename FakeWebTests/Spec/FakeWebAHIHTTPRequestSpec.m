@@ -10,7 +10,6 @@
 
 #import "Kiwi.h"
 #import "FakeWeb.h"
-#import "ASIHTTPRequest+FakeWeb.h"
 #import "ASIFormDataRequest.h"
 
 SPEC_BEGIN(FakeWebAHIHTTPRequestSpec)

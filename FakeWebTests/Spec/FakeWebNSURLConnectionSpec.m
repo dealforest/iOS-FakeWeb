@@ -10,7 +10,6 @@
 
 #import "Kiwi.h"
 #import "FakeWeb.h"
-#import "NSURLConnection+FakeWeb.h"
 #import "FakeWebTestNSURLConnectionViewController.h"
 
 SPEC_BEGIN(FakeWebNSURLConnectionSpec)
