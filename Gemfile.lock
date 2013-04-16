@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ocunit2junit (1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ocunit2junit (~> 1.2)
