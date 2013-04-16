@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/dealforest/iOS-FakeWeb.png)](http://travis-ci.org/dealforest/iOS-FakeWeb)
+
 # FakeWeb
 Simple HTTP request mocking/interception for testing module.
 
