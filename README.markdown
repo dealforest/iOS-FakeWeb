@@ -1,6 +1,8 @@
-[![Build Status](https://secure.travis-ci.org/dealforest/iOS-FakeWeb.png)](http://travis-ci.org/dealforest/iOS-FakeWeb)
+# FakeWeb [![Build Status](https://secure.travis-ci.org/dealforest/iOS-FakeWeb.png)](http://travis-ci.org/dealforest/iOS-FakeWeb)
 
-# FakeWeb
+[![Badge w/ Version](http://cocoapod-badges.herokuapp.com/v/iOS-FakeWeb/badge.png)](http://cocoadocs.org/docsets/iOS-FakeWeb)
+[![Badge w/ Platform](http://cocoapod-badges.herokuapp.com/p/iOS-FakeWeb/badge.png)](http://cocoadocs.org/docsets/iOS-FakeWeb)
+
 Simple HTTP request mocking/interception for testing module.
 
 Inspired by [chrisk's fakeweb][1].
