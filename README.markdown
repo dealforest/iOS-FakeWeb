@@ -81,3 +81,7 @@ The details are described in [__CHANGES__](https://github.com/dealforest/iOS-Fak
 MIT, the license agreement found in __License.txt__.
 
 [1]: https://github.com/chrisk/fakeweb
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dealforest/ios-fakeweb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
